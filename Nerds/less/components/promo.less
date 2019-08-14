@@ -1,0 +1,123 @@
+.promo{
+  background: @gray;
+  
+  .container{
+  background: none;
+  padding-bottom: 0;
+  }
+  
+  &__slider{
+    position: relative;
+  
+    display: flex;
+    overflow: hidden;
+  }
+  
+  &__slide{
+   z-index:10px;
+   flex-shrink:0;
+   width: 100%;
+   display: absolute;
+   transition: 0.6s;
+   background: @gray;
+   
+   &--slide-1{
+      background: url('../image/promo-slider-1.png') no-repeat 90% 50%, @gray;
+      transform: translate(-100%)
+   }
+   
+    &--slide-2{
+      background: url('../image/promo-slider-2.png') no-repeat 90% 50%, @gray;
+   }
+   
+    &--slide-3{
+      background: url('../image/promo-slider-3.png') no-repeat 90% 100%, @gray;
+   }
+  }
+  
+  &__slider-content{
+    width:475px;
+    padding-top: 50px;
+    padding-bottom: 45px;
+  }
+  
+  &__title{
+    font-family: @font-fam;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 52px;
+
+  }
+  
+  &__sub-title{
+    font-family: @font-fam;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 30px 0;
+  }
+  
+  &__slider-controls{
+    position: absolute;
+    width: 60px;
+    height: 20px; 
+    left: 47%;
+    bottom: 10%;
+    z-index:10;
+  }
+  
+  &__slider-control{
+  display: inline-block;
+  position: relative;
+  height: 12px;
+  width: 12px;
+  border-radius:50%;
+  background: #fff;
+  cursor: pointer;
+  }
+  
+  &__slider-control:hover{
+    transform: scale(1.1);
+  }
+  
+  &__slider-control::after{
+  content: '';
+  display: none;
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  left: 2px;
+  top: 2px;
+  border-radius:50%;
+  background: #857d7d;
+  }
+  
+  #sld-1:checked ~ div .promo__slider-control-1::after{
+      display: block;
+  }
+    #sld-2:checked ~ div .promo__slider-control-2::after{
+      display: block;
+  }
+    #sld-3:checked ~ div .promo__slider-control-3::after{
+      display: block;
+    }
+    
+    #sld-2:checked ~ div>.promo__slide--slide-2{
+      transform: translate(-100%);
+  } 
+    #sld-3:checked ~ div>.promo__slide--slide-3{
+      transform: translate(-200%);
+  }  
+    #sld-1:checked ~ div>.promo__slide--slide-1{
+      transform: translate(0%);
+  }
+      #sld-2:checked ~ div>.promo__slide--slide-1{
+      transform: translate(-100%);
+  } 
+      #sld-3:checked ~ div>.promo__slide--slide-2{
+      transform: translate(-200%);
+  } 
+  
+  input{
+    display: none;
+  }
+}

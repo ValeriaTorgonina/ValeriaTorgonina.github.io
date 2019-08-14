@@ -1,0 +1,90 @@
+.wrapper{
+    background: #fdfcfa url("img/content-texture.jpg");
+}
+
+main.shop {
+    color: black;
+    margin-bottom: 40px;
+}
+
+.content-block {
+    display: flex;
+}
+
+.menu {
+    width: 170px;
+}
+
+.menu label {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.product-cards {
+    padding-left: 70px;
+}
+
+.product-cards ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 710px;
+    margin-bottom: 40px;
+    padding-left: 0;
+}
+
+.card {
+    position: relative;
+    max-width: 220px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px 0px lightgray;
+}
+
+li:nth-of-type(3n) .card {
+    margin-right: 0px;
+}
+
+.card .avatar {
+    height: 165px;
+    background-color: #e5e5e5;
+    background-repeat: no-repeat;
+    background-size: 220px 165px;
+    background-position: 0 0;
+}
+
+.card .card-content {
+    padding: 15px;
+}
+
+.card .card-content h4 {
+    min-height: 48px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card footer {
+    display: flex;
+    justify-content: center;
+}
+
+.card span {
+    display: block;
+    width: 110px;
+    padding: 12px 0;
+    align-self: baseline;
+    text-align: center;
+    background-color: #e5e5e5;
+    list-style: none;
+}
+
+.card .btn {
+    display: block;
+    width: 78px;
+    padding: 13px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.product-cards .pagination {
+    margin-left: 10px;
+}

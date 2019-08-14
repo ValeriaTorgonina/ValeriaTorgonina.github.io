@@ -1,0 +1,8 @@
+@font-face {
+	font-family: Roboto Medium;
+	src: url('fonts/robotomedium.woff');
+}
+
+body{
+	font-family: "Roboto Medium", "Arial", sans-serif;
+}

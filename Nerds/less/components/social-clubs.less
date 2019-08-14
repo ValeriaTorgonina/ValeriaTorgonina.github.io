@@ -1,0 +1,68 @@
+.social-clubs{
+
+  display: flex;
+    align-items: center;
+  width:33%;
+  
+  &__icon{
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+   margin-right: 35px;
+   font-size: 0;
+   
+   &:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+   }
+   
+   &:not(:hover){
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -ms-transition: 0.2s;
+   -o-transition: 0.2s;
+   transition: 0.2s;
+   }
+   
+   a{
+    display: block;
+    width: 100%;
+    height: 100%;
+   }
+  }
+  
+  
+  
+  &__icon--vk{
+    background: @gray-20  url('../image/sprite.png') 16px -94px no-repeat;
+    
+    &:hover{
+      background: @red  url('../image/sprite.png') 16px -94px no-repeat;
+    }
+  }
+  
+  &__icon--fb{
+    background: @gray-20  url('../image/sprite.png') 23px -38px no-repeat ;
+    
+    &:hover{
+      background: @red  url('../image/sprite.png') 23px -38px no-repeat;
+    }
+  }
+  
+  &__icon--ig{
+    background: @gray-20  url('../image/sprite.png') 20px -152px no-repeat ;
+    
+    &:hover{
+      background: @red  url('../image/sprite.png') 20px -152px no-repeat;
+    }
+  }
+}

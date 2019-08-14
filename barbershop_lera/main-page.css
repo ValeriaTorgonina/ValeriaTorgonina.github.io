@@ -1,0 +1,133 @@
+.wrapper{
+    overflow: hidden;
+    background-image: url("img/main-background.jpeg");
+    background-position: 50% 5%;
+    background-repeat: no-repeat;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro .logo {
+    height: 200px;
+    width: 365px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.features-item {
+    position: relative;
+    text-align: center;
+    width: 280px;
+}
+
+.features-item h2::after {
+    content: "";
+    display: block;
+    margin: 20px auto;
+    margin-bottom: 30px;
+    height: 20px;
+    width: 20px;
+    background: white;
+    transform: rotate(45deg);
+}
+
+.content-block {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 430px;
+    background: #fdfcfa url("img/content-texture.jpg");
+    color: black;
+    margin: 35px auto;
+}
+
+.content-block::before {
+    content: "";
+    display:block;
+    position: absolute;
+    margin: 0 auto;
+    background-image: url("img/divide-block-bg.png");
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 270px;
+    left: 50%;
+    top: 80px;
+    margin-left: -5px;
+}
+
+.content-block .column {
+    width: 320px;
+    padding:25px 70px 54px 60px;
+}
+
+.column.news {
+    text-align: left;
+}
+
+.column.news ul {
+    padding: 0;
+    margin: 0;
+}
+
+.column.news li, .column.info span {
+    padding-bottom: 30px;
+}
+
+time {
+    text-transform: lowercase; 
+}
+
+.news .post {
+    color: black;
+}
+
+.gallery .slide-1 {
+    margin: 7px 0px 30px;
+    border: 7px solid white;
+    width: 286px;
+}
+
+.gallery .btn {
+    display: inline-block;
+}
+
+.gallery .btn:nth-of-type(2){
+    margin-left: 18px;
+}
+
+.column.info {
+    text-align: left;
+    line-height: 24px;
+}
+
+.column.info span {
+display: block;
+}
+
+.info .btn {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.info .btn:nth-of-type(2){
+    margin-left: 18px;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input-container input {
+    margin: 10px 20px 10px 0;
+}
+
+.input-container .btn{
+    width: 278px;
+    margin-top: 20px;
+}
+
