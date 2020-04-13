@@ -1,0 +1,1275 @@
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Document
+       ========================================================================== */
+/**
+     * 1. Correct the line height in all browsers.
+     * 2. Prevent adjustments of font size after orientation changes in
+     *    IE on Windows Phone and in iOS.
+     */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+       ========================================================================== */
+/**
+     * Remove the margin in all browsers (opinionated).
+     */
+body {
+  margin: 0; }
+
+/**
+     * Add the correct display in IE 9-.
+     */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+     * Correct the font size and margin on `h1` elements within `section` and
+     * `article` contexts in Chrome, Firefox, and Safari.
+     */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+figcaption,
+figure {
+  display: block; }
+
+/**
+     * Add the correct margin in IE 8.
+     */
+figure {
+  margin: 1em 40px; }
+
+/**
+     * 1. Add the correct box sizing in Firefox.
+     * 2. Show the overflow in Edge and IE.
+     */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+     * Add the correct display in IE.
+     */
+main {
+  display: block; }
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Links
+       ========================================================================== */
+/**
+     * 1. Remove the gray background on active links in IE 10.
+     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+     */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/* Text-level semantics
+       ========================================================================== */
+/**
+     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+     */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+     */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+     * Add the correct font weight in Chrome, Edge, and Safari.
+     */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+     * Add the correct font style in Android 4.3-.
+     */
+dfn {
+  font-style: italic; }
+
+/**
+     * Add the correct background and color in IE 9-.
+     */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+     * Add the correct font size in all browsers.
+     */
+small {
+  font-size: 80%; }
+
+/**
+     * Prevent `sub` and `sup` elements from affecting the line height in
+     * all browsers.
+     */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+audio,
+video {
+  display: inline-block; }
+
+/**
+     * Add the correct display in iOS 4-7.
+     */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+     * Remove the border on images inside links in IE 10-.
+     */
+img {
+  border-style: none; }
+
+/**
+     * Hide the overflow in IE.
+     */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+       ========================================================================== */
+/**
+     * 1. Change the font styles in all browsers (opinionated).
+     * 2. Remove the margin in Firefox and Safari.
+     */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+     * Show the overflow in IE.
+     */
+button {
+  overflow: visible; }
+
+/**
+     * Remove the inheritance of text transform in Edge, Firefox, and IE.
+     * 1. Remove the inheritance of text transform in Firefox.
+     */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+     *    controls in Android 4.
+     * 2. Correct the inability to style clickable types in iOS and Safari.
+     */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  /**
+       * Remove the inner border and padding in Firefox.
+       */
+  /**
+       * Restore the focus styles unset by the previous rule.
+       */ }
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0; }
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText; }
+
+/**
+     * Show the overflow in Edge.
+     */
+input {
+  overflow: visible; }
+
+/**
+     * 1. Add the correct box sizing in IE 10-.
+     * 2. Remove the padding in IE 10-.
+     */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+     * Correct the cursor style of increment and decrement buttons in Chrome.
+     */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+     * 1. Correct the odd appearance in Chrome and Safari.
+     * 2. Correct the outline style in Safari.
+     */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+  /**
+       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+       */ }
+  [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; }
+
+/**
+     * 1. Correct the inability to style clickable types in iOS and Safari.
+     * 2. Change font properties to `inherit` in Safari.
+     */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/**
+     * Correct the padding in Firefox.
+     */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+     * 1. Correct the text wrapping in Edge and IE.
+     * 2. Correct the color inheritance from `fieldset` elements in IE.
+     * 3. Remove the padding so developers are not caught out when they zero out
+     *    `fieldset` elements in all browsers.
+     */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  color: inherit;
+  /* 2 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+     * 1. Add the correct display in IE 9-.
+     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+     */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+     * Remove the default vertical scrollbar in IE.
+     */
+textarea {
+  overflow: auto; }
+
+/* Interactive
+       ========================================================================== */
+/*
+     * Add the correct display in Edge, IE, and Firefox.
+     */
+details {
+  display: block; }
+
+/*
+     * Add the correct display in all browsers.
+     */
+summary {
+  display: list-item; }
+
+/*
+     * Add the correct display in IE 9-.
+     */
+menu {
+  display: block; }
+
+/* Scripting
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+canvas {
+  display: inline-block; }
+
+/**
+     * Add the correct display in IE.
+     */
+template {
+  display: none; }
+
+/* Hidden
+       ========================================================================== */
+/**
+     * Add the correct display in IE 10-.
+     */
+[hidden] {
+  display: none; }
+
+.wrapper {
+  font-size: 0;
+  width: 100%;
+  background-color: #DAE9EF; }
+
+.container {
+  position: relative;
+  max-width: 1350px;
+  margin: 0 auto;
+  max-height: 610px;
+  overflow: hidden; }
+  .container--small {
+    display: inline-block;
+    width: 50%;
+    height: 400px; }
+  .container--flower {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #f7c9ae; }
+  .container--watch {
+    background: #F9DBE8; }
+  .container--calendar {
+    background: #D7F9B6; }
+  .container--garland {
+    width: 100%;
+    height: 50vh;
+    background-color: #E28B58;
+    background-image: linear-gradient(to left, #EDCF95 50%, transparent 51%);
+    background-size: 160px 100vh; }
+  .container--ufo {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #385461 0%, #578296 40%, #679AB2 60%);
+    background-size: 160px 100vh; }
+
+@media (max-width: 620px) {
+  .container:nth-of-type(2) {
+    max-height: 800px; }
+  .container--small {
+    display: block;
+    width: 100%; } }
+
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-color: #E8E2DA;
+  background-image: radial-gradient(#565451 50%, transparent 51%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  border: 20px solid #3F572D;
+  box-shadow: 1px 3px 1px 2px #4d4a4a;
+  overflow: hidden; }
+  .watch:before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 250px;
+    background-color: white;
+    top: 50%;
+    left: -50px;
+    transform: translate(0px, -50%) rotate(25deg);
+    z-index: 5; }
+  .watch:hover:before {
+    -webkit-animation: reflex 0.7s ease-in-out;
+            animation: reflex 0.7s ease-in-out; }
+
+.hour,
+.minute,
+.second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 90px;
+  background-image: linear-gradient(#565451 50%, transparent 51%);
+  border-radius: 5px;
+  transform: translate(-50%, -50%) rotate(0deg); }
+
+.minute {
+  width: 5px;
+  height: 120px;
+  transform: translate(-50%, -50%) rotate(70deg); }
+
+.second {
+  width: 3px;
+  height: 130px;
+  transform: translate(-50%, -50%) rotate(270deg); }
+
+.clock {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  color: #565451;
+  font-size: 24px;
+  font-weight: bold;
+  transform: translate(-50%, 0); }
+  .clock--3 {
+    top: 50%;
+    left: 100%;
+    transform: translate(-150%, -50%); }
+  .clock--6 {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%); }
+  .clock--9 {
+    top: 50%;
+    left: 0%;
+    transform: translate(100%, -50%); }
+
+@-webkit-keyframes reflex {
+  from {
+    transform: translate(0px, -50%) rotate(25deg); }
+  to {
+    transform: translate(230px, -50%) rotate(25deg); } }
+
+@keyframes reflex {
+  from {
+    transform: translate(0px, -50%) rotate(25deg); }
+  to {
+    transform: translate(230px, -50%) rotate(25deg); } }
+
+.calendar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 180px;
+  background-image: linear-gradient(to bottom, #ED5C5C 40px, #FCF8EF 41px);
+  box-shadow: -2px 1px 0px 0px #bbbbbb,-4px 2px 0px 0px #afafaf, -6px 3px 0px 0px #a7a6a6;
+  transform: rotate(0deg) translate(-50%, -50%); }
+  .calendar:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #565451;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 3px; }
+  .calendar:hover {
+    -webkit-animation: wiggle 1s ease-in-out;
+            animation: wiggle 1s ease-in-out;
+    transform-origin: 0% -50%; }
+
+.month {
+  font-size: 24px;
+  text-align: center;
+  color: #565451;
+  font-weight: bold; }
+
+.day {
+  margin-top: 50px;
+  font-size: 70px;
+  text-align: center;
+  color: #565451;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+@-webkit-keyframes wiggle {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  25% {
+    transform: rotate(-20deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  43% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  63% {
+    transform: rotate(10deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  75% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  88% {
+    transform: rotate(-7deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  100% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  25% {
+    transform: rotate(-20deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  43% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  63% {
+    transform: rotate(10deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  75% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+  88% {
+    transform: rotate(-7deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  100% {
+    transform: rotate(0deg) translate(-50%, -50%);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; } }
+
+.shelf {
+  position: absolute;
+  top: 480px;
+  width: 450px;
+  height: 25px;
+  background: #705138;
+  transform: skew(55deg) translate(-20px, 0) scale(1.3); }
+  .shelf:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    background: #8d6647;
+    top: 25px;
+    left: -11px;
+    transform: skew(-55deg); }
+  .shelf--right {
+    position: absolute;
+    top: 280px;
+    left: 650px;
+    box-shadow: -22px 15px 0 0px #c59064; }
+    .shelf--right:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-bottom: 15px solid #c59064;
+      border-right: 22px solid transparent;
+      top: 0px;
+      left: -11px;
+      transform: skew(-55deg);
+      z-index: -1; }
+  @media (max-width: 860px) {
+    .shelf {
+      left: -100px; }
+      .shelf--right {
+        left: auto;
+        right: -200px; } }
+  @media (max-width: 620px) {
+    .shelf {
+      top: 420px; }
+      .shelf--right {
+        display: none; } }
+  @media (max-width: 420px) {
+    .shelf {
+      transform: skew(55deg) scale(1) translate(-20px, -20px); } }
+
+.aloe {
+  position: absolute;
+  top: 400px;
+  left: 300px;
+  width: 110px;
+  height: 90px;
+  background: #E5FCF2;
+  background-image: linear-gradient(to right, #BBE8D5 49%, #E5FCF2 50%, #E5FCF2 70%, #BBE8D5 71%);
+  border-radius: 200px / 50px;
+  transform: scale(1.3);
+  z-index: 2; }
+  .aloe:before {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 25px;
+    background: #2c2926;
+    top: 0px;
+    left: 0px;
+    border-radius: 200px / 50px;
+    border: 3px  solid #BBE8D5;
+    box-sizing: border-box; }
+  .aloe-leaf {
+    position: absolute;
+    height: 170px;
+    width: 20px;
+    background: #1d3a23;
+    background-image: linear-gradient(to right, #3b6d45 0%, #244d2c 50%);
+    top: 20px;
+    left: 31px;
+    border-radius: 90% 20% 0 0;
+    transform: skew(0deg) translate(0, -100%);
+    box-shadow: 15px 0px #1d3a23;
+    transition: 2s; }
+    .aloe-leaf:nth-of-type(2) {
+      height: 140px;
+      width: 20px;
+      transform: skew(10deg) translate(0, -100%);
+      box-shadow: 10px 0px #1d3a23; }
+    .aloe-leaf:nth-of-type(3) {
+      height: 120px;
+      width: 20px;
+      left: 55px;
+      transform: skew(-15deg) translate(0, -100%);
+      box-shadow: -10px 0px #1d3a23; }
+    .aloe-leaf:nth-of-type(4) {
+      height: 150px;
+      width: 20px;
+      left: 40px;
+      transform: skew(-10deg) translate(0, -100%);
+      box-shadow: -15px 0px #1d3a23; }
+    .aloe-leaf:nth-of-type(5) {
+      height: 100px;
+      width: 16px;
+      left: 37px;
+      border-radius: 80% 100% 0 0;
+      transform: skew(-3deg) translate(0, -100%);
+      box-shadow: 0px 0px #1d3a23; }
+  @media (max-width: 860px) {
+    .aloe {
+      left: 100px; } }
+  @media (max-width: 620px) {
+    .aloe {
+      top: 340px; } }
+  @media (max-width: 420px) {
+    .aloe {
+      transform: scale(1) translate(0, -10px); } }
+
+.aloe:hover .aloe-leaf {
+  height: 150px;
+  transform: skew(20deg) translate(20px, -100%); }
+  .aloe:hover .aloe-leaf:nth-of-type(2) {
+    height: 120px;
+    transform: skew(40deg) translate(50px, -100%); }
+  .aloe:hover .aloe-leaf:nth-of-type(3) {
+    height: 100px;
+    transform: skew(-40deg) translate(-35px, -100%); }
+  .aloe:hover .aloe-leaf:nth-of-type(4) {
+    height: 130px;
+    transform: skew(-30deg) translate(-20px, -100%); }
+  .aloe:hover .aloe-leaf:nth-of-type(5) {
+    height: 70px;
+    transform: skew(50deg) translate(50px, -100%); }
+
+.sticker {
+  position: absolute;
+  top: 270px;
+  left: 340px;
+  width: 50px;
+  height: 50px;
+  background: #FFEBA3;
+  border-radius: 0 0 0 25px/10px;
+  overflow: hidden;
+  padding: 12px 10px;
+  font-style: italic;
+  font-size: 8px;
+  color: #444444;
+  box-sizing: border-box;
+  transform: scale(1.3); }
+  .sticker:before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    bottom: -3px;
+    width: 16px;
+    height: 10px;
+    background: #f7d970;
+    transform: rotate(56deg); }
+  .sticker:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    width: 4px;
+    height: 4px;
+    background: #c02222;
+    border-radius: 50%;
+    transform: translate(-50%, 0); }
+  @media (max-width: 860px) {
+    .sticker {
+      left: 135px; } }
+  @media (max-width: 620px) {
+    .sticker {
+      top: 210px; } }
+  @media (max-width: 420px) {
+    .sticker {
+      transform: scale(1) translate(0, 15px); } }
+
+.bailer {
+  position: absolute;
+  top: 210px;
+  left: 700px;
+  width: 90px;
+  height: 80px;
+  background-image: linear-gradient(to right, #8C8C8C 69%, #A0A0A0 70%, #A0A0A0 85%, #8C8C8C 86%);
+  border-radius: 200px / 50px;
+  z-index: 2;
+  transition: 1.5s;
+  transform: scale(1.3); }
+  .bailer:after {
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 20px;
+    background: #A0A0A0 radial-gradient(ellipse, #606060 40%, transparent 41%);
+    top: 0px;
+    left: 0px;
+    border-radius: 200px / 50px;
+    box-sizing: border-box; }
+  .bailer:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 25px;
+    left: 87px;
+    border-radius: 0 50% 50% 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 10px #8C8C8C; }
+  .bailer-nose {
+    position: absolute;
+    top: -20px;
+    left: -35px;
+    width: 15px;
+    height: 100px;
+    background: #8C8C8C;
+    border-radius: 20px/15px;
+    transform: rotate(-50deg);
+    z-index: 2; }
+    .bailer-nose:before {
+      content: '';
+      position: absolute;
+      width: 13px;
+      height: 5px;
+      background: #606060;
+      top: 0px;
+      left: 0px;
+      border-radius: 10px/5px;
+      border: 1px solid #8C8C8C; }
+
+.water {
+  position: absolute;
+  top: -34px;
+  left: -160px;
+  height: 140px;
+  width: 50px;
+  background-image: linear-gradient(to bottom, rgba(89, 179, 184, 0.5) 70%, rgba(89, 179, 184, 0) 100%);
+  border-radius: 89% 5% 0 0;
+  transform: skew(-20deg) rotate(40deg);
+  opacity: 0;
+  transition: 3s; }
+
+.shelf--right:hover ~ .bailer {
+  transform: rotate(-50deg) translate(-49px, -255px) scale(1.3); }
+  .shelf--right:hover ~ .bailer .water {
+    opacity: 1; }
+
+@media (max-width: 860px) {
+  .bailer {
+    left: auto;
+    right: 100px; }
+  .shelf--right:hover ~ .bailer {
+    transform: rotate(0deg) translate(0, 0) scale(1.3); }
+    .shelf--right:hover ~ .bailer .water {
+      opacity: 0; } }
+
+@media (max-width: 620px) {
+  .bailer {
+    display: none; } }
+
+.garland {
+  position: absolute;
+  top: -170px;
+  left: -20px;
+  width: 650px;
+  height: 280px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  z-index: 3; }
+  .garland:before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 330px;
+    border-radius: 50%;
+    border: 2px dotted #3b3a3a;
+    box-sizing: border-box;
+    transform: rotate(9deg); }
+  .garland--right {
+    left: auto;
+    right: 25px;
+    top: -160px; }
+  .garland__bulb {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    transform: rotate(20deg);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: radial-gradient(#FCF5DB 0%, #FFBF00 100%);
+    box-shadow: 0 0 25px 10px #FFBF00; }
+    .garland__bulb--green {
+      background-image: radial-gradient(#e8fcdb 0%, #3CD321 100%);
+      box-shadow: 0 0 25px 10px #3CD321; }
+    .garland__bulb--red {
+      background-image: radial-gradient(#fcdbdb 0%, #d32121 100%);
+      box-shadow: 0 0 25px 10px #d32121; }
+    .garland__bulb--blue {
+      background-image: radial-gradient(#dbe6fc 0%, #2159d3 100%);
+      box-shadow: 0 0 27px 12px #3b6fe0; }
+    .garland__bulb.dark {
+      border: 1px solid #3b3b3b;
+      background-image: radial-gradient(rgba(57, 58, 57, 0.3) 0%, rgba(70, 70, 70, 0.8) 100%);
+      box-shadow: none; }
+    .garland__bulb:before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      background: #3b3a3a;
+      transform: translate(-50%, 0);
+      border-radius: 6px 6px 3px 3px; }
+  .garland__bulb:nth-of-type(2) {
+    bottom: -5px;
+    left: 80px;
+    transform: rotate(16deg); }
+  .garland.light .garland__bulb {
+    border: 1px solid #5e5e5e;
+    background-image: radial-gradient(rgba(100, 100, 100, 0.3) 0%, rgba(124, 124, 124, 0.5) 100%);
+    box-shadow: none; }
+  @media (max-width: 860px) {
+    .garland {
+      left: 50%;
+      transform: translate(-53%, 0); }
+      .garland--right {
+        display: none; } }
+  @media (max-width: 420px) {
+    .garland {
+      transform: scale(0.8) translate(-65%, 0); } }
+
+.black-wall {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  opacity: 1; }
+
+.black-wall.light {
+  opacity: 0; }
+
+.toggler {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  border-radius: 2%;
+  background: #636363;
+  border: 1px solid #4e4e4e;
+  box-shadow: 0 0 0 5px #636363;
+  z-index: 3; }
+  .toggler.light {
+    background: #dbdbdb;
+    border: 1px solid #888888;
+    box-shadow: 0 0 0 5px #dbdbdb, 0 0 5px 3px #5c5c5c; }
+
+.ufo {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.9);
+  width: 136px;
+  height: 90px;
+  border-radius: 72px/52px;
+  background-color: #DAE9EF;
+  z-index: 2; }
+  .ufo:before {
+    content: '';
+    position: absolute;
+    top: 33px;
+    left: 50%;
+    transform: translate(-50%, 0%) scale(1.3);
+    width: 200px;
+    height: 53px;
+    border-radius: 98px/26px;
+    background-image: radial-gradient(#223847 60%, #28475c 61%);
+    background-position: 50% 0%;
+    background-size: 235px 57px;
+    background-repeat: no-repeat; }
+  .ufo:after {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 40px;
+    border-radius: 115px/32px;
+    background-color: #315369;
+    background-image: radial-gradient(#ffffff 40%, #315369 42%);
+    background-position: 50% 3px;
+    /* background-size: 250px 50px; */
+    background-repeat: no-repeat; }
+
+.wood {
+  position: absolute;
+  bottom: 28%;
+  right: 130px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg) scale(0.4);
+  background: #0e382f;
+  box-shadow: 45px 47px 0 20px #0e382f, 100px 106px 0 40px #0e382f, 159px 165px 0 50px #0e382f; }
+  .wood--1 {
+    bottom: 50%;
+    left: 53px;
+    background: #0a2921;
+    transform: rotate(55deg) skew(20deg) scale(0.3);
+    box-shadow: 45px 47px 0 20px #0a2921, 100px 106px 0 40px #0a2921, 159px 165px 0 50px #0a2921; }
+    .wood--1.wood--right {
+      right: 53px; }
+  .wood--2 {
+    bottom: 50%;
+    left: -30px;
+    transform: rotate(60deg) skew(30deg) scale(0.35);
+    background: #08241d;
+    box-shadow: 45px 47px 0 20px #08241d, 100px 106px 0 40px #08241d, 159px 165px 0 50px #08241d; }
+    .wood--2.wood--right {
+      right: -30px; }
+  .wood--3 {
+    bottom: 45%;
+    left: 15px;
+    transform: rotate(60deg) skew(30deg) scale(0.35);
+    background: #0d3a2f;
+    box-shadow: 45px 47px 0 20px #0d3a2f, 100px 106px 0 40px #0d3a2f, 159px 165px 0 50px #0d3a2f; }
+    .wood--3.wood--right {
+      right: 15px; }
+  .wood--4 {
+    left: -20px;
+    bottom: 40%;
+    transform: rotate(55deg) skew(20deg) scale(0.4);
+    background: #0a3026;
+    box-shadow: 45px 47px 0 20px #0a3026, 100px 106px 0 40px #0a3026, 159px 165px 0 50px #0a3026; }
+    .wood--4.wood--right {
+      right: -25px; }
+  .wood--5 {
+    bottom: 43%;
+    left: 90px;
+    background: #114b46;
+    transform: rotate(51deg) skew(15deg) scale(0.35);
+    box-shadow: 45px 47px 0 20px #114b46, 100px 106px 0 40px #114b46, 159px 165px 0 50px #114b46; }
+    .wood--5.wood--right {
+      right: 100px; }
+  .wood--6 {
+    bottom: 35%;
+    left: 90px;
+    background: #0C352C;
+    transform: rotate(50deg) skew(5deg) scale(0.4);
+    box-shadow: 45px 47px 0 20px #0C352C, 100px 106px 0 40px #0C352C, 159px 165px 0 50px #0C352C; }
+    .wood--6.wood--right {
+      right: 70px; }
+  .wood--7 {
+    left: 55px;
+    background: #092821;
+    transform: rotate(45deg) scale(0.45);
+    box-shadow: 45px 47px 0 20px #092821, 100px 106px 0 40px #092821, 159px 165px 0 50px #092821; }
+    .wood--7.wood--right {
+      right: 30px; }
+  .wood--8 {
+    bottom: 23%;
+    left: -23px;
+    background: #0F3F34;
+    transform: rotate(55deg) skew(20deg) scale(0.45);
+    box-shadow: 45px 47px 0 20px #0F3F34, 100px 106px 0 40px #0F3F34, 159px 165px 0 50px #0F3F34; }
+    .wood--8.wood--right {
+      right: -23px; }
+  .wood--9 {
+    bottom: 15%;
+    left: 20px;
+    background: #0C352C;
+    transform: rotate(47deg) scale(0.55);
+    box-shadow: 45px 47px 0 20px #0C352C, 100px 106px 0 40px #0C352C, 159px 165px 0 50px #0C352C; }
+    .wood--9.wood--right {
+      right: 0px; }
+  .wood--right {
+    left: auto; }
+
+.field {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: #56746c;
+  -webkit-clip-path: polygon(50% 4%, 67% 1%, 77% 5%, 90% 5%, 100% 9%, 100% 100%, 0 100%, 0 11%, 15% 10%, 33% 8%);
+          clip-path: polygon(50% 4%, 67% 1%, 77% 5%, 90% 5%, 100% 9%, 100% 100%, 0 100%, 0 11%, 15% 10%, 33% 8%); }
+  .field:before {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 55vh;
+    background-image: linear-gradient(to top, #4D6D23 50%, #3e581c 100%);
+    -webkit-clip-path: polygon(46% 10%, 60% 6%, 77% 5%, 90% 1%, 100% 0, 100% 100%, 0 100%, 0 0, 15% 3%, 30% 8%);
+            clip-path: polygon(46% 10%, 60% 6%, 77% 5%, 90% 1%, 100% 0, 100% 100%, 0 100%, 0 0, 15% 3%, 30% 8%); }
+
+.cow {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  width: 80px;
+  height: 50px;
+  transform: translate(-50%, 0%);
+  background: url("../../img/icons/cow.png") 50% 50% no-repeat;
+  background-size: contain; }
+
+.ufo__light {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  width: 350px;
+  height: 370px;
+  transform: translate(-50%, 0);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-radius: 200px/100px;
+  z-index: 5;
+  -webkit-clip-path: polygon(157px 0px, 232px 0, 396px 375px, -88px 566px);
+          clip-path: polygon(157px 0px, 232px 0, 396px 375px, -88px 566px);
+  transition: 2s;
+  opacity: 0; }
+  .ufo__light:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 250px;
+    height: 365px;
+    transform: translate(-50%, 0);
+    background-image: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-radius: 200px/100px;
+    z-index: 3;
+    -webkit-clip-path: polygon(108px 0px, 182px 4px, 279px 382px, -92px 760px);
+            clip-path: polygon(108px 0px, 182px 4px, 279px 382px, -92px 760px); }
+
+@-webkit-keyframes ufo-leave {
+  10% {
+    transform: translate(-50%, 20%); }
+  30% {
+    transform: translate(-50%, 20%); }
+  33% {
+    transform: translate(-56%, 1%) scale(0.3); }
+  34% {
+    transform: translate(45vw, -11vh) scale(0.1); }
+  45% {
+    transform: translate(45vw, -11vh) scale(0.1); }
+  48% {
+    transform: translate(-50%, 0) scale(0.9); } }
+
+@keyframes ufo-leave {
+  10% {
+    transform: translate(-50%, 20%); }
+  30% {
+    transform: translate(-50%, 20%); }
+  33% {
+    transform: translate(-56%, 1%) scale(0.3); }
+  34% {
+    transform: translate(45vw, -11vh) scale(0.1); }
+  45% {
+    transform: translate(45vw, -11vh) scale(0.1); }
+  48% {
+    transform: translate(-50%, 0) scale(0.9); } }
+
+@-webkit-keyframes ufo-light {
+  10% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  29% {
+    opacity: 0; } }
+
+@keyframes ufo-light {
+  10% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  29% {
+    opacity: 0; } }
+
+@-webkit-keyframes cow-abduction {
+  20% {
+    transform: translate(-50%, 0%);
+    opacity: 1; }
+  25% {
+    transform: translate(-50%, -320px) rotate(60deg);
+    opacity: 0; }
+  26% {
+    transform: translate(500px, 0); }
+  35% {
+    opacity: 1;
+    transform: translate(500px, 0);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  40% {
+    transform: translate(-50%, 0);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; } }
+
+@keyframes cow-abduction {
+  20% {
+    transform: translate(-50%, 0%);
+    opacity: 1; }
+  25% {
+    transform: translate(-50%, -320px) rotate(60deg);
+    opacity: 0; }
+  26% {
+    transform: translate(500px, 0); }
+  35% {
+    opacity: 1;
+    transform: translate(500px, 0);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+  40% {
+    transform: translate(-50%, 0);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; } }
+
+.container--ufo:hover .ufo {
+  -webkit-animation: ufo-leave 40s infinite;
+          animation: ufo-leave 40s infinite; }
+
+.container--ufo:hover .ufo__light {
+  -webkit-animation: ufo-light 40s infinite;
+          animation: ufo-light 40s infinite; }
+
+.container--ufo:hover .cow {
+  -webkit-animation: cow-abduction 40s infinite;
+          animation: cow-abduction 40s infinite; }
+
+@media (max-width: 620px) {
+  .wood {
+    display: none; } }
