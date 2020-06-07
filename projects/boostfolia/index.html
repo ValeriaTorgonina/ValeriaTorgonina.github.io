@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <title>boostforia</title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="main-header">
+            <div class="container">
+                <a href="index.html" class="main-header__link">
+                    <svg class="main-header__logo">
+                        <use xlink:href="img/sprite.svg#rocket"></use>
+                    </svg>
+                    <span class="main-header__logo-text">boostfolia</span>
+                </a>
+                <nav class="main-nav">
+                    <button class="main-nav__burger" title="menu"></button> 
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="#home" class="main-nav__link active">home</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#about" class="main-nav__link">about us</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#works" class="main-nav__link">our works</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#team" class="main-nav__link">who we are</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#features" class="main-nav__link">some features</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#blog" class="main-nav__link">blog posts</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#plans" class="main-nav__link">chose plan</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#contact" class="main-nav__link">get in touch</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="intro rellax" id="home" data-rellax-speed="-6">
+                <div class="container rellax" data-rellax-speed="-1">
+                    <h1 class="main-title">we think creative be creative</h1>
+                    <span class="intro__text">like to do creative works</span>
+                </div>
+            </section>
+            
+            <section class="about" id="about">
+                <div class="container">
+                    <h2 class="title">about us</h2>
+                    <p class="text">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis rerum 
+                        perferendis in enim ipsum et dignissimos magnam facere officia beatae.
+                    </p>
+                    <div class="about__inner">
+                        <div class="about__card">
+                            <svg class="about__icon">
+                                <use xlink:href="img/sprite.svg#paint"></use>
+                            </svg>
+                            <span class="about__card-title">creative design</span>
+                            <p class="about__card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Obcaecati, natus? Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                        <div class="about__card">
+                            <svg class="about__icon">
+                                <use xlink:href="img/sprite.svg#portfolio"></use>
+                            </svg>
+                            <span class="about__card-title">creative design</span>
+                            <p class="about__card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Obcaecati, natus? Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                        <div class="about__card">
+                            <svg class="about__icon">
+                                <use xlink:href="img/sprite.svg#loop"></use>
+                            </svg>
+                            <span class="about__card-title">creative design</span>
+                            <p class="about__card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                 elit. Obcaecati, natus? Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="process">
+                <div class="process__content">
+                    <h2 class="process__title">watch behind the scene</h2>
+                    <p class="text text--light">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Cum impedit ducimus voluptatibus quis 
+                        nisi quaerat consequuntur recusandae voluptates, 
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, eaque.
+                    </p>
+                    <button class="button">play now</button>
+                </div>
+                <div class="process__video-inner">
+                    <video class="process__video" id="process__video" width="100%" height="100%" poster="img/video/video-poster.jpg">
+                        <source src="img/video/video.mp4" type="video/mp4">
+                    </video>
+                    <button class="process__play-button">
+                        <svg class="process__icon">
+                            <use xlink:href="img/sprite.svg#play"></use>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <section class="works" id="works">
+                <div class="container">
+                    <h2 class="title">our works</h2>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing 
+                        elit. Velit praesentium possimus earum ipsa, hic odio.
+                        Lorem, ipsum dolor sit amet consectetur.
+                    </p>
+                    <ul class="works__filter">
+                        <li class="works__filter-item">
+                            <button class="works__filter-button active" name="all">all projects</button>
+                        </li>
+                        <li class="works__filter-item">
+                            <button class="works__filter-button" name="photo">photography</button>
+                        </li>
+                        <li class="works__filter-item">
+                            <button class="works__filter-button" name="design">web design</button>
+                        </li>
+                        <li class="works__filter-item">
+                            <button class="works__filter-button" name="branding">branding</button>
+                        </li>
+                        <li class="works__filter-item">
+                            <button class="works__filter-button" name="mobile">mobile app</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="works__inner">
+                    <div class="works__item" title="photo">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-1.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-1.jpg" height="100%" width="100%" alt="work 1">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="mobile">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-2.webp">
+                            <img class="lazyload" src="img/stub-image-2.jpg" data-src="img/card-bg-2.jpg" height="100%" width="100%" alt="work 2">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="branding">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-3.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-3.jpg" height="100%" width="100%" alt="work 3">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="design">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-4.webp">
+                            <img class="lazyload" src="img/stub-image-2.jpg" data-src="img/card-bg-4.jpg" height="100%" width="100%" alt="work 4">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="design">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-5.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-5.jpg" height="100%" width="100%" alt="work 5">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="mobile">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-6.webp">
+                            <img class="lazyload" src="img/stub-image-2.jpg" data-src="img/card-bg-6.jpg" height="100%" width="100%" alt="work 6">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="branding">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-7.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-7.jpg" height="100%" width="100%" alt="work 7">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="photo">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="">
+                            <img class="lazyload" src="img/stub-image-2.jpg" data-src="img/card-bg-8.jpg" height="100%" width="100%" alt="work 8">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="design">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-9.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-9.jpg" height="100%" width="100%" alt="work 9">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="branding">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-10.webp">
+                            <img class="lazyload" src="img/stub-image-2.jpg" data-src="img/card-bg-10.jpg" height="100%" width="100%" alt="work 10">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="mobile">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-11.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-11.jpg" height="100%" width="100%" alt="work 11">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="photo">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-12.webp">
+                            <img class="lazyload" src="img/stub-image-2.jpg" data-src="img/card-bg-12.jpg" height="100%" width="100%" alt="work 12">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="photo">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-13.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-13.jpg" height="100%" width="100%" alt="work 13">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="branding">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-14.webp">
+                            <img class="lazyload" src="img/stub-image-2.jpg" data-src="img/card-bg-14.jpg" height="100%" width="100%" alt="work 14">
+                        </picture>
+                    </div>
+                    <div class="works__item" title="mobile">
+                        <picture class="works__image">
+                            <source class="lazyload" type="image/webp" data-srcset="img/card-bg-15.webp">
+                            <img class="lazyload" src="img/stub-image-1.jpg" data-src="img/card-bg-15.jpg" height="100%" width="100%" alt="work 15">
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools">
+                <div class="container">
+                    <div class="tools__slider owl-carousel owl-theme">
+                        <slide class="tools__slide">
+                            <svg class="tools__icon tools__icon--forest">
+                                <use xlink:href="img/sprite.svg#themeforest"></use>
+                            </svg>
+                        </slide>
+                        <slide class="tools__slide">
+                            <svg class="tools__icon tools__icon--river">
+                                <use xlink:href="img/sprite.svg#graphicriver"></use>
+                            </svg>
+                        </slide>
+                        <slide class="tools__slide">
+                            <svg class="tools__icon tools__icon--videohive">
+                                <use xlink:href="img/sprite.svg#videohive"></use>
+                            </svg>
+                        </slide>
+                        <slide class="tools__slide">
+                            <svg class="tools__icon tools__icon--forest">
+                                <use xlink:href="img/sprite.svg#themeforest"></use>
+                            </svg>
+                        </slide>
+                    </div>
+                </div>
+            </section>
+
+            <section class="team" id="team">
+                <div class="container">
+                    <h2 class="title">who we are</h2>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Ducimus, fuga? Magni architecto vero atque odio!
+                    </p>
+                    <div class="team__inner">
+                        <section class="team__person">
+                            <div class="team__person-slider owl-carousel owl-theme">
+                                <div class="team__person-slide" id="person-slide-1">
+                                    <picture class="team__person-image">
+                                        <source class="lazyload" type="image/webp" data-srcset="img/card-bg-1.webp">
+                                        <img class="lazyload" alt="person 1" src="img/stub-image-2.jpg" data-src="img/card-bg-1.jpg" height="100%" width="100%">
+                                    </picture>
+                                    <div class="team__person-content">
+                                        <span class="team__person-name">jane smith</span>
+                                        <span class="team__person-function">designer</span>
+                                        <ul class="socials">
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#twitter"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#facebook"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#instagram"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team__person-slide" id="person-slide-2">
+                                    <picture class="team__person-image">
+                                        <source class="lazyload" type="image/webp" data-srcset="img/card-bg-1.webp">
+                                        <img class="lazyload" alt="person 2" src="img/stub-image-2.jpg" data-src="img/card-bg-1.jpg" height="100%" width="100%">
+                                    </picture>
+                                    <div class="team__person-content">
+                                        <span class="team__person-name">john brown</span>
+                                        <span class="team__person-function">manager</span>
+                                        <ul class="socials">
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#twitter"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#facebook"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#instagram"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="team__person-slide" id="person-slide-3">
+                                    <picture class="team__person-image">
+                                        <source class="lazyload" type="image/webp" data-srcset="img/card-bg-1.webp">
+                                        <img class="lazyload" alt="person 3" src="img/stub-image-2.jpg" data-src="img/card-bg-1.jpg" height="100%" width="100%">
+                                    </picture>
+                                    <div class="team__person-content">
+                                        <span class="team__person-name">lana hopkins</span>
+                                        <span class="team__person-function">developer</span>
+                                        <ul class="socials">
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#twitter"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#facebook"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="socials__item">
+                                                <a href="#" class="socials__link">
+                                                    <svg class="socials__icon">
+                                                        <use xlink:href="img/sprite.svg#instagram"></use>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="team__skills">
+                            <h3 class="team__skills-title">my skills</h3>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Pariatur numquam reiciendis ipsam nisi veniam tempore.
+                            </p>
+                            <ul class="team__skills-list">
+                                <li class="team__skills-item">
+                                    <span class="team__skills-name">photoshop</span>
+                                    <div class="team__skills-decor team__skills-decor--photo"></div>
+                                    <span class="team__skills-percent">88%</span>
+                                </li>
+                                <li class="team__skills-item">
+                                    <span class="team__skills-name">illustrator</span>
+                                    <div class="team__skills-decor team__skills-decor--illustrator"></div>
+                                    <span class="team__skills-percent">92%</span>
+                                </li>
+                                <li class="team__skills-item">
+                                    <span class="team__skills-name">sketch</span>
+                                    <div class="team__skills-decor team__skills-decor--sketch"></div>
+                                    <span class="team__skills-percent">90%</span>
+                                </li>
+                                <li class="team__skills-item">
+                                    <span class="team__skills-name">after effects</span>
+                                    <div class="team__skills-decor team__skills-decor--after-effects"></div>
+                                    <span class="team__skills-percent">98%</span>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features" id="features">
+                <h2 class="title title--light">some features</h2>
+                <div class="container">
+                    <ul class="features__list">
+                        <li class="features__item">
+                            <svg class="features__icon">
+                                <use xlink:href="img/sprite.svg#monitor"></use>
+                            </svg>
+                            <span class="features__text">Shortcodes</span>
+                            <span class="features__number">46</span>
+                        </li>
+                        <li class="features__item">
+                            <svg class="features__icon">
+                                <use xlink:href="img/sprite.svg#settings"></use>
+                            </svg>
+                            <span class="features__text">integrated plugins</span>
+                            <span class="features__number">128</span>
+                        </li>
+                        <li class="features__item">
+                            <svg class="features__icon">
+                                <use xlink:href="img/sprite.svg#shopbag"></use>
+                            </svg>
+                            <span class="features__text">creative products</span>
+                            <span class="features__number">450</span>
+                        </li>
+                        <li class="features__item">
+                            <svg class="features__icon">
+                                <use xlink:href="img/sprite.svg#medal"></use>
+                            </svg>
+                            <span class="features__text">client worldwide</span>
+                            <span class="features__number">100+</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="blog" id="blog">
+                <div class="container">
+                    <h2 class="title">blog posts</h2>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Id odit voluptatem velit temporibus. A, commodi.
+                    </p>
+                    <div class="blog__inner">
+                        <article class="article">
+                            <div class="article__image article__image--first"></div>
+                            <a class="article__link">
+                                <svg class="article__link-icon">
+                                    <use xlink:href="img/sprite.svg#link"></use>
+                                </svg>
+                            </a>
+                            <a class="article__look">
+                                <svg class="article__look-icon">
+                                    <use xlink:href="img/sprite.svg#look"></use>
+                                </svg>
+                            </a>
+                            <div class="article__content">
+                                <h4 class="article__title">Creat creative & clean</h4>
+                                <p class="article__text">
+                                    Lorem ipsum elit. Saepe, ab!
+                                    Lorem ipsum dolor sit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                                <div class="article__footer">
+                                    <span class="article__date">
+                                        <svg class="article__date-icon">
+                                            <use xlink:href="img/sprite.svg#clock"></use>
+                                        </svg>
+                                        25 jan 2015
+                                    </span>
+                                    <span class="article__like">
+                                        <svg class="article__like-icon">
+                                            <use xlink:href="img/sprite.svg#like"></use>
+                                        </svg>
+                                        25
+                                    </span>
+                                    <span class="article__comment">
+                                        <svg class="article__comment-icon">
+                                            <use xlink:href="img/sprite.svg#comment"></use>
+                                        </svg>
+                                        11
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article">
+                            <div class="article__image article__image--second"></div>
+                            <a class="article__link">
+                                <svg class="article__link-icon">
+                                    <use xlink:href="img/sprite.svg#link"></use>
+                                </svg>
+                            </a>
+                            <a class="article__look">
+                                <svg class="article__look-icon">
+                                    <use xlink:href="img/sprite.svg#look"></use>
+                                </svg>
+                            </a>
+                            <div class="article__content">
+                                <h4 class="article__title">Make a sleek break</h4>
+                                <p class="article__text">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, ab!
+                                    Lorem ipsum dolor sit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                                <div class="article__footer">
+                                    <span class="article__date">
+                                        <svg class="article__date-icon">
+                                            <use xlink:href="img/sprite.svg#clock"></use>
+                                        </svg>
+                                        25 jan 2015
+                                    </span>
+                                    <span class="article__like">
+                                        <svg class="article__like-icon">
+                                            <use xlink:href="img/sprite.svg#like"></use>
+                                        </svg>
+                                        25
+                                    </span>
+                                    <span class="article__comment">
+                                        <svg class="article__comment-icon">
+                                            <use xlink:href="img/sprite.svg#comment"></use>
+                                        </svg>
+                                        11
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article">
+                            <div class="article__image article__image--third"></div>
+                            <a class="article__link">
+                                <svg class="article__link-icon">
+                                    <use xlink:href="img/sprite.svg#link"></use>
+                                </svg>
+                            </a>
+                            <a class="article__look">
+                                <svg class="article__look-icon">
+                                    <use xlink:href="img/sprite.svg#look"></use>
+                                </svg>
+                            </a>
+                            <div class="article__content">
+                                <h4 class="article__title">Creative manipulations</h4>
+                                <p class="article__text">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, ab!
+                                    Lorem ipsum dolor sit. Lorem, ipsum dolor.
+                                </p>
+                                <div class="article__footer">
+                                    <span class="article__date">
+                                        <svg class="article__date-icon">
+                                            <use xlink:href="img/sprite.svg#clock"></use>
+                                        </svg>
+                                        25 jan 2015
+                                    </span>
+                                    <span class="article__like">
+                                        <svg class="article__like-icon">
+                                            <use xlink:href="img/sprite.svg#like"></use>
+                                        </svg>
+                                        25
+                                    </span>
+                                    <span class="article__comment">
+                                        <svg class="article__comment-icon">
+                                            <use xlink:href="img/sprite.svg#comment"></use>
+                                        </svg>
+                                        11
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="plans" id="plans">
+                <h2 class="title title--light">chose plan</h2>
+                <div class="plans__inner">
+                    <section class="plan">
+                        <header class="plan__header">
+                            <h4 class="plan__title">basic</h4>
+                            <span class="plan__price">Free</span>
+                        </header>
+                        <ul class="plan__list">
+                            <li class="plan__item">
+                                <span class="plan__item-number">20</span>
+                                <span class="plan__item-text">Pages</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">2</span>
+                                <span class="plan__item-text">GB Storage</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">150</span>
+                                <span class="plan__item-text">Members</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">2</span>
+                                <span class="plan__item-text">Contributors</span>
+                            </li>
+                        </ul>
+                        <button class="button">purchase</button>
+                    </section>
+                    <section class="plan">
+                        <header class="plan__header">
+                            <h4 class="plan__title">standart</h4>
+                            <span class="plan__price">$24.00</span>
+                        </header>
+                        <ul class="plan__list">
+                            <li class="plan__item">
+                                <span class="plan__item-number">25</span>
+                                <span class="plan__item-text">Pages</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">10</span>
+                                <span class="plan__item-text">GB Storage</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">300</span>
+                                <span class="plan__item-text">Members</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">5</span>
+                                <span class="plan__item-text">Contributors</span>
+                            </li>
+                        </ul>
+                        <button class="button">purchase</button>
+                    </section>
+                    <section class="plan">
+                        <header class="plan__header">
+                            <h4 class="plan__title">premium</h4>
+                            <span class="plan__price">$40.00</span>
+                        </header>
+                        <ul class="plan__list">
+                            <li class="plan__item">
+                                <span class="plan__item-number">30</span>
+                                <span class="plan__item-text">Pages</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">20</span>
+                                <span class="plan__item-text">GB Storage</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">500</span>
+                                <span class="plan__item-text">Members</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">10</span>
+                                <span class="plan__item-text">Contributors</span>
+                            </li>
+                        </ul>
+                        <button class="button">purchase</button>
+                    </section>
+                    <section class="plan">
+                        <header class="plan__header">
+                            <h4 class="plan__title">professional</h4>
+                            <span class="plan__price">$75.00</span>
+                        </header>
+                        <ul class="plan__list">
+                            <li class="plan__item">
+                                <span class="plan__item-number">40</span>
+                                <span class="plan__item-text">Pages</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">40</span>
+                                <span class="plan__item-text">GB Storage</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">1000</span>
+                                <span class="plan__item-text">Members</span>
+                            </li>
+                            <li class="plan__item">
+                                <span class="plan__item-number">20</span>
+                                <span class="plan__item-text">Contributors</span>
+                            </li>
+                        </ul>
+                        <button class="button">purchase</button>
+                    </section>
+                </div>
+            </section>
+
+            <section class="contact" id="contact">
+                <div class="container">
+                    <h2 class="title">get in touch</h2>
+                    <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nesciunt mollitia,
+                        voluptatem aliquam exercitationem quam ex facilis maxime sint ad!
+                    </p>
+                    <form class="contact__form">
+                        <label class="input-wrapper">
+                            <input class="input" type="text">
+                            <span class="input-text">name</span>
+                        </label>
+                        <label class="input-wrapper">
+                            <input class="input" type="email">
+                            <span class="input-text">mail</span>
+                        </label>
+                        <label class="input-wrapper">
+                            <textarea type="text" class="input" style="width:100%; height:90px;"></textarea>
+                            <span class="input-text">message</span>
+                        </label>
+                        <button type="submit" class="button">send message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <svg class="main-footer__logo">
+                    <use xlink:href="img/sprite.svg#rocket"></use>
+                </svg>
+                <span class="main-footer__logo-text">boostfolia</span>
+                <span class="main-footer__tagline">made with love by creativeproduct</span>
+                <ul class="socials">
+                    <li class="socials__item">
+                        <a href="#" class="socials__link">
+                            <svg class="socials__icon">
+                                <use xlink:href="img/sprite.svg#twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a href="#" class="socials__link">
+                            <svg class="socials__icon">
+                                <use xlink:href="img/sprite.svg#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a href="#" class="socials__link">
+                            <svg class="socials__icon">
+                                <use xlink:href="img/sprite.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        
+        <div class="overlay"></div>
+        <div class="popup">
+            <div class="popup__image"></div>
+            <div class="popup__content">
+                <h4 class="popup__title">Creat creative & clean</h4>
+                <p class="popup__text">
+                    Lorem ipsum elit. Saepe, ab!
+                    Lorem ipsum dolor sit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque nobis 
+                    sequi beatae eaque adipisci commodi esse dolorum non in!
+                </p>
+        
+                <p class="popup__text">
+                    Lorem ipsum elit. Saepe, ab!
+                    Lorem ipsum dolor sit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque nobis 
+                    sequi beatae eaque Lorem ipsum dolor sit amet consectetur.
+                </p>
+        
+                <p class="popup__text">
+                    Lorem ipsum elit. Saepe, ab!
+                    Lorem ipsum dolor sit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque nobis 
+                    Lorem, ipsum.
+                </p>
+                <div class="popup__footer">
+                    <span class="popup__date">
+                        <svg class="popup__date-icon">
+                            <use xlink:href="img/sprite.svg#clock"></use>
+                        </svg>
+                        25 jan 2015
+                    </span>
+                    <span class="popup__like">
+                        <svg class="popup__like-icon">
+                            <use xlink:href="img/sprite.svg#like"></use>
+                        </svg>
+                        25
+                    </span>
+                    <span class="popup__comment">
+                        <svg class="popup__comment-icon">
+                            <use xlink:href="img/sprite.svg#comment"></use>
+                        </svg>
+                        11
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+        
+        <script src="js/main-min.js"></script>
+</div></body>
+
+</html>
