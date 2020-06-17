@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Valeria Torgonina</title>
 </head>
 
 <body>
     <div class="wrapper">
+
         <header class="main-header">
             <div class="container">
                 <a href="index.html" class="main-header__link">
@@ -19,7 +21,7 @@
                     </svg>
                 </a>
                 <nav class="main-nav">
-                    <button class="main-nav__burger" title="menu"></button>
+                    <button class="main-nav__burger" title="menu"></button> 
                     <ul class="main-nav__list">
                         <li class="main-nav__item">
                             <a href="#home" class="main-nav__link active">главная</a>
@@ -45,20 +47,13 @@
         </header>
 
         <main class="main">
-            <section class="intro" id="home">
+            <section class="intro rellax" id="home" data-rellax-speed="-5">
                 <div class="container">
-                    <picture class="intro__img">
-                        <source type="image/webp" srcset="assets/img/photo.webp">
-                        <img src="assets/img/photo.jpg" height="100%" width="100%" alt="valeria torgonina photo">
-                    </picture>
-                    <div class="intro__decor intro__decor--left"></div>
-                    <div class="intro__decor intro__decor--right"></div>
-                    <div class="intro__content">
+                    <div class="intro__content rellax" data-rellax-speed="5">
                         <h1 class="main-title">Валерия Торгонина</h1>
                         <h2 class="title">html-верстальщик</h2>
                         <p class="intro__text">
-                            Привет, меня зовут Валерия и я html-верстальщик. Это мое портфолио. Предлагаю прокрутить
-                            вниз и узнать больше обо мне.
+                            Привет, меня зовут Валерия и я html-верстальщик. Это мое портфолио. Предлагаю прокрутить вниз и узнать больше обо мне.
                         </p>
                     </div>
                 </div>
@@ -66,27 +61,31 @@
 
             <section class="about" id="about">
                 <div class="container">
-                    <h2 class="title">Обо мне</h2>
-                    <p class="text">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis velit,
-                        tenetur labore voluptates ut quaerat soluta facere iure aut est illum voluptatum
-                        voluptatibus eius quo, adipisci suscipit, ipsa et consectetur
-                        dicta impedit accusamus sint aliquam.
+                    <h2 class="title">О себе</h2>
+                    <p class="text" data-aos="fade-left">
+                        Итак, мне 20 лет. Я занимаюсь версткой уже больше года и получаю удовольствие от этого процесса.
+                        Начался мой путь изучения этой профессии с курсов HTML-академии. 
+                        Спустя некоторое время я попробовала применить свои знания на реальных проектах: 
+                        мой наставник давал мне задания и проверял проделанную работу на качество кода.
+                        Однако я все еще не была полноценным членом команды, поэтому решила найти работу верстальщика.
                     </p>
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
-                        incidunt accusamus culpa illum nobis reiciendis possimus odit, tempora
-                        in reprehenderit autem, cupiditate error similique maiores, pariatur magni.
-                        Quis sapiente cumque ea nulla! Consequuntur molestiae pariatur natus vel cum eos at.
+                    <p class="text" data-aos="fade-right">
+                        По иронии судьбы меня, едва ли знающую базовый js нашла компания, реализующая проекты на React и React-native. 
+                        Так я стала стажером и обучалась React фреймворку. 
+                        Позже наши пути разошлись, а я решила подтянуть js базу, которой мне так не хватало во время стажировки, и снова искать работу.
                     </p>
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
-                        incidunt accusamus culpa illum nobis reiciendis possimus odit, tempora.
+                    <p class="text" data-aos="fade-left">
+                        В итоге я попала в компанию на вакансию верстальщика, занималась многими сайтами на поддержке и окончательно поняла, что верстка действительно привлекает меня.
+                        К сожалению из-за сложной экономической ситуации я попала под сокращение, что сподвигло меня сверстать свое портфолио и на нем отточить все свои навыки и умения.
+                    </p>
+                    <p class="text" data-aos="fade-right">
+                        На данный момент я чувствую себя достаточно уверенной в своих знаниях и жду шанса попасть в хорошую команду разработчиков, 
+                        чтобы и дальше развивать свои навыки, взаимодействуя с собратьями по профессии.
                     </p>
                 </div>
             </section>
 
-            <section class="skills" id="skills">
+            <section class="skills" id="skills" data-aos="fade-up">
                 <div class="container">
                     <h2 class="title">навыки</h2>
                     <div class="skills__list">
@@ -117,7 +116,7 @@
                                 </span>
                             </div>
                             <div class="skills__item swiper-slide">
-                                <div class="counter" data-cp-percentage="85" data-cp-color="#2e4439"></div>
+                                <div class="counter" data-cp-percentage="90" data-cp-color="#2e4439"></div>
                                 <h3 class="skills__name">БЭМ</h3>
                                 <span class="skills__description">
                                     Работаю по данной методологии достаточно давно,
@@ -125,7 +124,7 @@
                                 </span>
                             </div>
                             <div class="skills__item swiper-slide">
-                                <div class="counter" data-cp-percentage="85" data-cp-color="#2e4439"></div>
+                                <div class="counter" data-cp-percentage="99" data-cp-color="#2e4439"></div>
 
                                 <h3 class="skills__name">SASS</h3>
                                 <span class="skills__description">
@@ -142,15 +141,15 @@
                                 </span>
                             </div>
                             <div class="skills__item swiper-slide">
-                                <div class="counter" data-cp-percentage="85" data-cp-color="#2e4439"></div>
+                                <div class="counter" data-cp-percentage="60" data-cp-color="#2e4439"></div>
                                 <h3 class="skills__name">Gulp</h3>
                                 <span class="skills__description">
-                                    Gulp - мои руки и ноги, поэтому научилась дорабатывать
+                                    Gulp - мой главный помощник, поэтому я научилась дорабатывать
                                     и редактировать свой сборщик.
                                 </span>
                             </div>
                             <div class="skills__item swiper-slide">
-                                <div class="counter" data-cp-percentage="85" data-cp-color="#2e4439"></div>
+                                <div class="counter" data-cp-percentage="35" data-cp-color="#2e4439"></div>
                                 <h3 class="skills__name">React</h3>
                                 <span class="skills__description">
                                     Уровень знания этой библиотеки считаю стартовым.
@@ -158,7 +157,7 @@
                                 </span>
                             </div>
                             <div class="skills__item swiper-slide">
-                                <div class="counter" data-cp-percentage="85" data-cp-color="#2e4439"></div>
+                                <div class="counter" data-cp-percentage="95" data-cp-color="#2e4439"></div>
                                 <h3 class="skills__name">Photoshop</h3>
                                 <span class="skills__description">
                                     Очень часто использую Adobe Photoshop при работе
@@ -172,78 +171,87 @@
                     <button class="swiper-button-next" id="skills-next"></button>
                 </div>
             </section>
+
             <section class="works" id="works">
                 <div class="container">
-                    <h2 class="title title--light">проекты</h2>
+                    <h2 class="title title--light" data-aos="fade-up">проекты</h2>
                     <div class="works__inner">
-                        <section class="works__slider">
+                        <section class="works__slider" data-aos="fade-right">
                             <div class="swiper-wrapper">
                                 <div class="works__item swiper-slide" id="works-item-1">
                                     <picture class="works__item-image">
-                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/lian.webp">
-                                        <img class="lazyload" alt="the band" src="assets/img/stub-img.jpg"
-                                            data-src="assets/img/lian.jpg" height="100%" width="100%">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/stroyplatforma-logo.webp">
+                                        <img class="lazyload" alt="стройплатформа лого" src="assets/img/stub-img.jpg" data-src="assets/img/stroyplatforma-logo.jpg" height="100%" width="100%">
                                     </picture>
-                                    <a href="projects/lian/index.html" class="works__item-name" target="_blank">lian</a>
+                                    <a href="https://xn--80aazigidfggdmg2a.xn--p1ai/" class="works__item-name" target="_blank">Стройплатформа</a>
                                 </div>
                                 <div class="works__item swiper-slide" id="works-item-2">
                                     <picture class="works__item-image">
-                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/piroll.webp">
-                                        <img class="lazyload" alt="the band" src="assets/img/stub-img.jpg"
-                                            data-src="assets/img/piroll.jpg" height="100%" width="100%">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/blacksides-logo.webp">
+                                        <img class="lazyload" alt="BlackSides лого" src="assets/img/stub-img.jpg" data-src="assets/img/blacksides-logo.jpg" height="100%" width="100%">
                                     </picture>
-                                    <a href="projects/piroll/index.html" class="works__item-name"
-                                        target="_blank">piroll</a>
+                                    <a href="https://www.blacksides.ru/" class="works__item-name" target="_blank">BlackSides</a>
                                 </div>
                                 <div class="works__item swiper-slide" id="works-item-3">
                                     <picture class="works__item-image">
-                                        <source class="lazyload" type="image/webp"
-                                            data-srcset="assets/img/boostfolia.webp">
-                                        <img class="lazyload" alt="the band" src="assets/img/stub-img.jpg"
-                                            data-src="assets/img/boostfolia.jpg" height="100%" width="100%">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/crystall-logo.webp">
+                                        <img class="lazyload" alt="кристаллМед лого" src="assets/img/stub-img.jpg" data-src="assets/img/crystall-logo.jpg" height="100%" width="100%">
                                     </picture>
-                                    <a href="projects/boostfolia/index.html" class="works__item-name"
-                                        target="_blank">boostfolia</a>
+                                    <a href="http://xn--80aickjiai5all.xn--p1ai/" class="works__item-name" target="_blank">кристаллМед</a>
                                 </div>
                                 <div class="works__item swiper-slide" id="works-item-4">
                                     <picture class="works__item-image">
-                                        <source class="lazyload" type="image/webp"
-                                            data-srcset="assets/img/the-band.webp">
-                                        <img class="lazyload" alt="the band" src="assets/img/stub-img.jpg"
-                                            data-src="assets/img/the-band.jpg" height="100%" width="100%">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/the-band-logo.webp">
+                                        <img class="lazyload" alt="the band лого" src="assets/img/stub-img.jpg" data-src="assets/img/the-band-logo.jpg" height="100%" width="100%">
                                     </picture>
-                                    <a href="projects/the-band/index.html" class="works__item-name" target="_blank">the
-                                        band</a>
+                                    <a href="projects/the-band/index.html" class="works__item-name" target="_blank">the band</a>
                                 </div>
                                 <div class="works__item swiper-slide" id="works-item-5">
                                     <picture class="works__item-image">
-                                        <source class="lazyload" type="image/webp"
-                                            data-srcset="assets/img/css-drawing.webp">
-                                        <img class="lazyload" alt="the band" src="assets/img/stub-img.jpg"
-                                            data-src="assets/img/css-drawing.jpg" height="100%" width="100%">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/boostfolia-logo.webp">
+                                        <img class="lazyload" alt="boostfolia лого" src="assets/img/stub-img.jpg" data-src="assets/img/boostfolia-logo.jpg" height="100%" width="100%">
                                     </picture>
-                                    <a href="projects/css-drawing/index.html" class="works__item-name"
-                                        target="_blank">CSS drawing</a>
+                                    <a href="projects/boostfolia/index.html" class="works__item-name" target="_blank">boostfolia</a>
+                                </div>
+                                <div class="works__item swiper-slide" id="works-item-6">
+                                    <picture class="works__item-image">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/piroll-logo.webp">
+                                        <img class="lazyload" alt="piroll лого" src="assets/img/stub-img.jpg" data-src="assets/img/piroll-logo.jpg" height="100%" width="100%">
+                                    </picture>
+                                    <a href="projects/piroll/index.html" class="works__item-name" target="_blank">piroll</a>
+                                </div>
+                                <div class="works__item swiper-slide" id="works-item-7">
+                                    <picture class="works__item-image">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/lian-logo.webp">
+                                        <img class="lazyload" alt="lian лого" src="assets/img/stub-img.jpg" data-src="assets/img/lian-logo.jpg" height="100%" width="100%">
+                                    </picture>
+                                    <a href="projects/lian/index.html" class="works__item-name" target="_blank">lian</a>
+                                </div>
+                                <div class="works__item swiper-slide" id="works-item-8">
+                                    <picture class="works__item-image">
+                                        <source class="lazyload" type="image/webp" data-srcset="assets/img/css-drawing-logo.webp">
+                                        <img class="lazyload" alt="css рисунки" src="assets/img/stub-img.jpg" data-src="assets/img/css-drawing-logo.jpg" height="100%" width="100%">
+                                    </picture>
+                                    <a href="projects/css-drawing/index.html" class="works__item-name" target="_blank">CSS drawing</a>
                                 </div>
                             </div>
                             <div class="swiper-pagination" id="works-pagination"></div>
                         </section>
 
-                        <section class="works__description">
+                        <section class="works__description" data-aos="fade-left">
                             <h3 class="works__description-title">Описание</h3>
                             <div class="works__tags">
                                 <span class="works__tags-item">gulp</span>
                             </div>
                             <p class="text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                 Pariatur numquam reiciendis ipsam nisi veniam tempore.
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ea incidunt
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ea incidunt 
                                 cupiditate obcaecati, at architecto cumque velit iure debitis laboriosam!
                             </p>
                             <span class="works__description-link-wrapper">
                                 Ссылка на репозиторий:
-                                <a href="https://github.com/ValeriaTorgonina/Lian"
-                                    class="works__description-link">https://github.com/ValeriaTorgonina/Lian</a>
+                                <a href="https://github.com/ValeriaTorgonina/Lian" class="works__description-link" target="_blank">https://github.com/ValeriaTorgonina/Lian</a>
                             </span>
                         </section>
                     </div>
@@ -251,7 +259,7 @@
             </section>
             <section class="testimonials" id="testimonials">
                 <div class="container">
-                    <h2 class="title">отзывы</h2>
+                    <h2 class="title" data-aos="fade-up">отзывы</h2>
                     <svg class="testimonials__quote-icon">
                         <use xlink:href="assets/img/sprite.svg#quote"></use>
                     </svg>
@@ -260,26 +268,38 @@
                             <div class="swiper-slide">
                                 <blockquote class="testimonials__content">
                                     <p class="testimonials__text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Odio, vitae! Veritatis unde possimus inventore reprehenderit,
-                                        repudiandae quos, voluptas earum cupiditate doloremque, totam cumque.
-                                        Expedita molestiae aut dignissimos doloribus et corporis?
+                                        Работал с Валерией в интернет-агентстве Дэкстра, 
+                                        она квалифицированный специалист, дисциплинированный
+                                        сотрудник и дружелюбный человек. Мне было приятно с ней работать.
                                     </p>
                                     <cite class="testimonials__author">
-                                        <span class="testimonials__author-name">Владлен Волков</span>
-                                        <span class="testimonials__author-position">frontent-разработчик Ronte</span>
+                                        <span class="testimonials__author-name">Руслан Сайфутдинов</span>  
+                                        <span class="testimonials__author-position">html-верстальщик Dextra</span>
                                     </cite>
                                 </blockquote>
                             </div>
                             <div class="swiper-slide">
                                 <blockquote class="testimonials__content">
                                     <p class="testimonials__text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Fugit accusamus totam fugiat illo odit adipisci debitis
-                                        nemo, quas porro saepe vitae eaque quis dolorum velit?
+                                        В codeMonx мы вместе с Лерой проходили 
+                                        стажировку и занимались парным программированием.
+                                        Она проявила себя как приятный и активный напарник
                                     </p>
                                     <cite class="testimonials__author">
-                                        <span class="testimonials__author-name">Дмитрий Стаценко</span>
+                                        <span class="testimonials__author-name">Филипп Деревянко</span>  
+                                        <span class="testimonials__author-position">бывший стажер CodeMonx</span>
+                                    </cite>
+                                </blockquote>
+                            </div>
+                            <div class="swiper-slide">
+                                <blockquote class="testimonials__content">
+                                    <p class="testimonials__text">
+                                        Достойный начинающий разработчик. 
+                                        Видно, что в профессии не из-за денег. 
+                                        Интересно обсуждать с ней новости из сферы верстки. Весёлая.
+                                    </p>
+                                    <cite class="testimonials__author">
+                                        <span class="testimonials__author-name">Дмитрий Стаценко</span>  
                                         <span class="testimonials__author-position">html-верстальщик Ronte</span>
                                     </cite>
                                 </blockquote>
@@ -287,28 +307,15 @@
                             <div class="swiper-slide">
                                 <blockquote class="testimonials__content">
                                     <p class="testimonials__text">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                        Necessitatibus quos eligendi cum vero voluptates esse deleniti
-                                        reprehenderit, voluptatum nisi ipsam cupiditate a aliquid laudantium at fugiat!
-                                        Quis quidem incidunt non assumenda, maxime ipsum esse.
+                                        Помогаю в обучении уже на протяжении полутора лет, 
+                                        но каждый раз удивляюсь её успехам. Детально объяснил 
+                                        Лере много фундаментальных концепций и разобрал с ней всякие 
+                                        модные тулзы из мира frontend. Доверяю ей верстку и 
+                                        другие задачи из реальных проектов, её можно брать в команду.
                                     </p>
                                     <cite class="testimonials__author">
-                                        <span class="testimonials__author-name">Павел Никифоров</span>
-                                        <span class="testimonials__author-position">html-верстальщик банка ВТБ</span>
-                                    </cite>
-                                </blockquote>
-                            </div>
-                            <div class="swiper-slide">
-                                <blockquote class="testimonials__content">
-                                    <p class="testimonials__text">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                        Necessitatibus quos esse deleniti
-                                        reprehenderit, voluptatum nisi ipsam cupiditate laudantium at fugiat!
-                                        Quis quidem incidunt non assumenda, maxime ipsum esse.
-                                    </p>
-                                    <cite class="testimonials__author">
-                                        <span class="testimonials__author-name">Руслан Сайфутдинов</span>
-                                        <span class="testimonials__author-position">html-верстальщик Dextra</span>
+                                        <span class="testimonials__author-name">Владлен Волков</span>  
+                                        <span class="testimonials__author-position">frontent-разработчик Ronte</span>
                                     </cite>
                                 </blockquote>
                             </div>
@@ -348,12 +355,15 @@
         </footer>
     </div>
 
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.11.0/rellax.min.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <script type="text/javascript" src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="js/main-min.js"></script>
 </body>

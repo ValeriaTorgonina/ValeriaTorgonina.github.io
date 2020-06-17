@@ -469,12 +469,12 @@ a {
   transition: 0.3s; }
   button:hover,
   a:hover {
-    -webkit-filter: brightness(0.9);
-            filter: brightness(0.9); }
-  button:active,
-  a:active {
     -webkit-filter: brightness(0.8);
             filter: brightness(0.8); }
+  button:active,
+  a:active {
+    -webkit-filter: brightness(0.6);
+            filter: brightness(0.6); }
 
 h1, h2, h3, h4, p {
   margin: 0; }
@@ -529,7 +529,8 @@ h1, h2, h3, h4, p {
   margin: 0 auto; }
   .socials__icon {
     width: 65px;
-    height: 65px; }
+    height: 65px;
+    transition: 0.3s; }
     .socials__icon:hover, .socials__icon:active {
       fill: #f2efed; }
 
@@ -1481,7 +1482,6 @@ h1, h2, h3, h4, p {
       justify-content: space-between; }
   .main-footer__copyright {
     display: block;
-    margin-top: 18px;
     color: #f2efed;
     font-size: 18px;
     text-transform: uppercase; }
