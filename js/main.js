@@ -224,10 +224,10 @@ class Works {
     this.worksLink.innerHTML = value;
     if(value.length <= 3 ) {
       this.worksLink.setAttribute('href', '#');
-      this.worksLink.style = "pointer-events: none;text-decoration: none";
+      this.worksLink.style = "pointer-events: none;";
     }else {
       this.worksLink.setAttribute('href', value);
-      this.worksLink.style = "pointer-events: auto;text-decoration: underline";
+      this.worksLink.style = "pointer-events: auto;";
     }
   }
 
