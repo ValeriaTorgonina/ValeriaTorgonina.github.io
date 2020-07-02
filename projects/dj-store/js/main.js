@@ -19,6 +19,381 @@ Array.prototype.includes || Object.defineProperty(Array.prototype, "includes", {
 });
 "use strict";
 
+(function () {
+  'use strict';
+
+  if (self.fetch) {
+    return;
+  }
+
+  function normalizeName(name) {
+    if (typeof name !== 'string') {
+      name = name.toString();
+    }
+
+    if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
+      throw new TypeError('Invalid character in header field name');
+    }
+
+    return name.toLowerCase();
+  }
+
+  function normalizeValue(value) {
+    if (typeof value !== 'string') {
+      value = value.toString();
+    }
+
+    return value;
+  }
+
+  function Headers(headers) {
+    this.map = {};
+    var self = this;
+
+    if (headers instanceof Headers) {
+      headers.forEach(function (name, values) {
+        values.forEach(function (value) {
+          self.append(name, value);
+        });
+      });
+    } else if (headers) {
+      Object.getOwnPropertyNames(headers).forEach(function (name) {
+        self.append(name, headers[name]);
+      });
+    }
+  }
+
+  Headers.prototype.append = function (name, value) {
+    name = normalizeName(name);
+    value = normalizeValue(value);
+    var list = this.map[name];
+
+    if (!list) {
+      list = [];
+      this.map[name] = list;
+    }
+
+    list.push(value);
+  };
+
+  Headers.prototype['delete'] = function (name) {
+    delete this.map[normalizeName(name)];
+  };
+
+  Headers.prototype.get = function (name) {
+    var values = this.map[normalizeName(name)];
+    return values ? values[0] : null;
+  };
+
+  Headers.prototype.getAll = function (name) {
+    return this.map[normalizeName(name)] || [];
+  };
+
+  Headers.prototype.has = function (name) {
+    return this.map.hasOwnProperty(normalizeName(name));
+  };
+
+  Headers.prototype.set = function (name, value) {
+    this.map[normalizeName(name)] = [normalizeValue(value)];
+  }; // Instead of iterable for now.
+
+
+  Headers.prototype.forEach = function (callback) {
+    var self = this;
+    Object.getOwnPropertyNames(this.map).forEach(function (name) {
+      callback(name, self.map[name]);
+    });
+  };
+
+  function consumed(body) {
+    if (body.bodyUsed) {
+      return fetch.Promise.reject(new TypeError('Already read'));
+    }
+
+    body.bodyUsed = true;
+  }
+
+  function fileReaderReady(reader) {
+    return new fetch.Promise(function (resolve, reject) {
+      reader.onload = function () {
+        resolve(reader.result);
+      };
+
+      reader.onerror = function () {
+        reject(reader.error);
+      };
+    });
+  }
+
+  function readBlobAsArrayBuffer(blob) {
+    var reader = new FileReader();
+    reader.readAsArrayBuffer(blob);
+    return fileReaderReady(reader);
+  }
+
+  function readBlobAsText(blob) {
+    var reader = new FileReader();
+    reader.readAsText(blob);
+    return fileReaderReady(reader);
+  }
+
+  var support = {
+    blob: 'FileReader' in self && 'Blob' in self && function () {
+      try {
+        new Blob();
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }(),
+    formData: 'FormData' in self
+  };
+
+  function Body() {
+    this.bodyUsed = false;
+
+    this._initBody = function (body) {
+      this._bodyInit = body;
+
+      if (typeof body === 'string') {
+        this._bodyText = body;
+      } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+        this._bodyBlob = body;
+      } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+        this._bodyFormData = body;
+      } else if (!body) {
+        this._bodyText = '';
+      } else {
+        throw new Error('unsupported BodyInit type');
+      }
+    };
+
+    if (support.blob) {
+      this.blob = function () {
+        var rejected = consumed(this);
+
+        if (rejected) {
+          return rejected;
+        }
+
+        if (this._bodyBlob) {
+          return fetch.Promise.resolve(this._bodyBlob);
+        } else if (this._bodyFormData) {
+          throw new Error('could not read FormData body as blob');
+        } else {
+          return fetch.Promise.resolve(new Blob([this._bodyText]));
+        }
+      };
+
+      this.arrayBuffer = function () {
+        return this.blob().then(readBlobAsArrayBuffer);
+      };
+
+      this.text = function () {
+        var rejected = consumed(this);
+
+        if (rejected) {
+          return rejected;
+        }
+
+        if (this._bodyBlob) {
+          return readBlobAsText(this._bodyBlob);
+        } else if (this._bodyFormData) {
+          throw new Error('could not read FormData body as text');
+        } else {
+          return fetch.Promise.resolve(this._bodyText);
+        }
+      };
+    } else {
+      this.text = function () {
+        var rejected = consumed(this);
+        return rejected ? rejected : fetch.Promise.resolve(this._bodyText);
+      };
+    }
+
+    if (support.formData) {
+      this.formData = function () {
+        return this.text().then(decode);
+      };
+    }
+
+    this.json = function () {
+      return this.text().then(function (text) {
+        return JSON.parse(text);
+      });
+    };
+
+    return this;
+  } // HTTP methods whose capitalization should be normalized
+
+
+  var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
+
+  function normalizeMethod(method) {
+    var upcased = method.toUpperCase();
+    return methods.indexOf(upcased) > -1 ? upcased : method;
+  }
+
+  function Request(url, options) {
+    options = options || {};
+    this.url = url;
+    this.credentials = options.credentials || 'omit';
+    this.headers = new Headers(options.headers);
+    this.method = normalizeMethod(options.method || 'GET');
+    this.mode = options.mode || null;
+    this.referrer = null;
+
+    if ((this.method === 'GET' || this.method === 'HEAD') && options.body) {
+      throw new TypeError('Body not allowed for GET or HEAD requests');
+    }
+
+    this._initBody(options.body);
+  }
+
+  function decode(body) {
+    var form = new FormData();
+    body.trim().split('&').forEach(function (bytes) {
+      if (bytes) {
+        var split = bytes.split('=');
+        var name = split.shift().replace(/\+/g, ' ');
+        var value = split.join('=').replace(/\+/g, ' ');
+        form.append(decodeURIComponent(name), decodeURIComponent(value));
+      }
+    });
+    return form;
+  }
+
+  function headers(xhr) {
+    var head = new Headers();
+    var pairs = xhr.getAllResponseHeaders().trim().split('\n');
+    pairs.forEach(function (header) {
+      var split = header.trim().split(':');
+      var key = split.shift().trim();
+      var value = split.join(':').trim();
+      head.append(key, value);
+    });
+    return head;
+  }
+
+  var noXhrPatch = typeof window !== 'undefined' && !!window.ActiveXObject && !(window.XMLHttpRequest && new XMLHttpRequest().dispatchEvent);
+
+  function getXhr() {
+    // from backbone.js 1.1.2
+    // https://github.com/jashkenas/backbone/blob/1.1.2/backbone.js#L1181
+    if (noXhrPatch && !/^(get|post|head|put|delete|options)$/i.test(this.method)) {
+      this.usingActiveXhr = true;
+      return new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return new XMLHttpRequest();
+  }
+
+  Body.call(Request.prototype);
+
+  function Response(bodyInit, options) {
+    if (!options) {
+      options = {};
+    }
+
+    this._initBody(bodyInit);
+
+    this.type = 'default';
+    this.url = null;
+    this.status = options.status;
+    this.ok = this.status >= 200 && this.status < 300;
+    this.statusText = options.statusText;
+    this.headers = options.headers instanceof Headers ? options.headers : new Headers(options.headers);
+    this.url = options.url || '';
+  }
+
+  Body.call(Response.prototype);
+  self.Headers = Headers;
+  self.Request = Request;
+  self.Response = Response;
+
+  self.fetch = function (input, init) {
+    // TODO: Request constructor should accept input, init
+    var request;
+
+    if (Request.prototype.isPrototypeOf(input) && !init) {
+      request = input;
+    } else {
+      request = new Request(input, init);
+    }
+
+    return new fetch.Promise(function (resolve, reject) {
+      var xhr = getXhr();
+
+      if (request.credentials === 'cors') {
+        xhr.withCredentials = true;
+      }
+
+      function responseURL() {
+        if ('responseURL' in xhr) {
+          return xhr.responseURL;
+        } // Avoid security warnings on getResponseHeader when not allowed by CORS
+
+
+        if (/^X-Request-URL:/m.test(xhr.getAllResponseHeaders())) {
+          return xhr.getResponseHeader('X-Request-URL');
+        }
+
+        return;
+      }
+
+      function onload() {
+        if (xhr.readyState !== 4) {
+          return;
+        }
+
+        var status = xhr.status === 1223 ? 204 : xhr.status;
+
+        if (status < 100 || status > 599) {
+          reject(new TypeError('Network request failed'));
+          return;
+        }
+
+        var options = {
+          status: status,
+          statusText: xhr.statusText,
+          headers: headers(xhr),
+          url: responseURL()
+        };
+        var body = 'response' in xhr ? xhr.response : xhr.responseText;
+        resolve(new Response(body, options));
+      }
+
+      xhr.onreadystatechange = onload;
+
+      if (!self.usingActiveXhr) {
+        xhr.onload = onload;
+
+        xhr.onerror = function () {
+          reject(new TypeError('Network request failed'));
+        };
+      }
+
+      xhr.open(request.method, request.url, true);
+
+      if ('responseType' in xhr && support.blob) {
+        xhr.responseType = 'blob';
+      }
+
+      request.headers.forEach(function (name, values) {
+        values.forEach(function (value) {
+          xhr.setRequestHeader(name, value);
+        });
+      });
+      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit);
+    });
+  };
+
+  fetch.Promise = self.Promise; // you could change it to your favorite alternative
+
+  self.fetch.polyfill = true;
+})();
+"use strict";
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -60,11 +435,11 @@ var Header = /*#__PURE__*/function () {
         if (_this.headerMenu.classList.contains('open')) {
           _this.menuIcon.style.display = "none";
           _this.crossIcon.style.display = "block";
-          document.body.style = "overflow: hidden";
+          document.body.style.overflow = "hidden";
         } else {
           _this.crossIcon.style.display = "none";
           _this.menuIcon.style.display = "block";
-          document.body.style = "overflow: auto";
+          document.body.style.overflow = "auto";
         }
       };
     }
@@ -83,7 +458,11 @@ var Form = /*#__PURE__*/function () {
     _classCallCheck(this, Form);
 
     this.form = form;
+    this.loader = form.querySelector('.loader');
+    this.nameInput = form.querySelector('.input--name');
+    this.telInput = form.querySelector('.input--tel');
     this.formSuccess = formSuccess;
+    this.requestManager = new RequestManager();
     this.addHandlersForForm();
   }
 
@@ -94,13 +473,68 @@ var Form = /*#__PURE__*/function () {
 
       this.form.addEventListener('submit', function (e) {
         e.preventDefault();
-        _this2.form.hidden = true;
-        _this2.formSuccess.hidden = false;
+
+        _this2.postFormData();
       });
+    }
+  }, {
+    key: "postFormData",
+    value: function postFormData() {
+      var _this3 = this;
+
+      var formData = this.getFormValues();
+      this.loader.classList.add('onload');
+      this.requestManager.postRequest(formData).then(function () {
+        return _this3.openSuccessForm();
+      })["catch"](function () {
+        _this3.loader.classList.remove('onload');
+      });
+    }
+  }, {
+    key: "openSuccessForm",
+    value: function openSuccessForm() {
+      this.form.hidden = true;
+      this.loader.classList.remove('onload');
+      this.formSuccess.hidden = false;
+    }
+  }, {
+    key: "getFormValues",
+    value: function getFormValues() {
+      var name = this.nameInput.value;
+      var phone = this.telInput.value;
+      var formData = {
+        name: name,
+        phone: phone
+      };
+      return JSON.stringify(formData);
     }
   }]);
 
   return Form;
+}();
+
+var RequestManager = /*#__PURE__*/function () {
+  function RequestManager() {
+    _classCallCheck(this, RequestManager);
+  }
+
+  _createClass(RequestManager, [{
+    key: "postRequest",
+    value: function postRequest(body) {
+      return fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: body
+      }).then(function (response) {
+        return console.log(response.status);
+      })["catch"](function (error) {
+        console.warn(error);
+        alert("\u043F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 ".concat(error.status));
+        throw error.status;
+      });
+    }
+  }]);
+
+  return RequestManager;
 }();
 
 var Popup = /*#__PURE__*/function () {
@@ -121,7 +555,7 @@ var Popup = /*#__PURE__*/function () {
   _createClass(Popup, [{
     key: "addHandlerForOpenBtns",
     value: function addHandlerForOpenBtns() {
-      var _this3 = this;
+      var _this4 = this;
 
       document.body.addEventListener('click', function (e) {
         var target = e.target;
@@ -130,14 +564,14 @@ var Popup = /*#__PURE__*/function () {
         var btnName = null;
 
         while (target !== currentTarget) {
-          if (_this3.openBtns.includes(target)) {
+          if (_this4.openBtns.includes(target)) {
             e.stopImmediatePropagation();
             isOpenBtn = true;
             btnName = target.dataset.name;
             var popup = document.getElementById(btnName);
 
             if (popup) {
-              return _this3.openPopup(popup);
+              return _this4.openPopup(popup);
             } else {
               return;
             }
@@ -161,7 +595,7 @@ var Popup = /*#__PURE__*/function () {
   }, {
     key: "addHandlersForCloseBtns",
     value: function addHandlersForCloseBtns() {
-      var _this4 = this;
+      var _this5 = this;
 
       document.body.addEventListener('click', function (e) {
         var target = e.target;
@@ -170,7 +604,7 @@ var Popup = /*#__PURE__*/function () {
         var isPopup = false;
 
         while (target !== currentTarget) {
-          if (_this4.closeBtns.includes(target)) {
+          if (_this5.closeBtns.includes(target)) {
             isCloseBtn = true;
           }
 
@@ -179,15 +613,15 @@ var Popup = /*#__PURE__*/function () {
           }
 
           if (isCloseBtn && isPopup) {
-            return _this4.closePopup(target);
+            return _this5.closePopup(target);
           }
 
           target = target.parentElement;
         }
 
         if (!isPopup) {
-          _this4.popups.forEach(function (el) {
-            return _this4.closePopup(el);
+          _this5.popups.forEach(function (el) {
+            return _this5.closePopup(el);
           });
         }
       });
@@ -195,13 +629,13 @@ var Popup = /*#__PURE__*/function () {
   }, {
     key: "closePopup",
     value: function closePopup(popup) {
-      var _this5 = this;
+      var _this6 = this;
 
       popup.classList.remove('active');
       this.overlay.classList.remove('active');
       setTimeout(function () {
         popup.hidden = true;
-        _this5.overlay.hidden = true;
+        _this6.overlay.hidden = true;
       }, 500);
     }
   }]);
@@ -243,16 +677,32 @@ document.addEventListener("DOMContentLoaded", function () {
       768: {
         slidesPerView: 2
       }
+    },
+    on: {
+      slideChange: function slideChange() {
+        imgSlider.slideTo(introSlider.realIndex);
+      }
     }
   });
   var imgSlider = new Swiper('.img-slider', {
     effect: 'fade',
     speed: 700,
-    navigation: {
-      nextEl: '#intro-next',
-      prevEl: '#intro-prev'
+    on: {
+      slideChange: function slideChange() {
+        introSlider.slideTo(imgSlider.realIndex);
+      }
     }
   });
+  var telInputs = document.getElementsByClassName('input--tel');
+
+  for (var i = 0; i < telInputs.length; i++) {
+    new IMask(telInputs[i], {
+      mask: '{+7}(000)000-00-00',
+      min: 15
+    });
+  }
+
+  ;
 });
 "use strict";
 
