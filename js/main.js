@@ -209,7 +209,7 @@ class Works {
     this.worksSlider.on('transitionEnd', () => {
       this.changeWorksText();
     })
-  }
+  }      
 
   changeWorksText() {
     const active = document.querySelector('.works__slider .swiper-slide-active').getAttribute('id');
@@ -224,10 +224,10 @@ class Works {
     this.worksLink.innerHTML = value;
     if(value.length <= 3 ) {
       this.worksLink.setAttribute('href', '#');
-      this.worksLink.style = "pointer-events: none;";
+      this.worksLink.style = "pointer-events: none; text-decoration: none";
     }else {
       this.worksLink.setAttribute('href', value);
-      this.worksLink.style = "pointer-events: auto;";
+      this.worksLink.style = "pointer-events: auto; text-decoration: underline";
     }
   }
 
@@ -311,9 +311,8 @@ document.addEventListener("DOMContentLoaded", function() {
       disableOnInteraction: false,
     },
   });
-
-
 });
+
 const header = new Header();
 const skillsController = new CircleProgressController('.counter');
 const skills = document.querySelector(".skills");
