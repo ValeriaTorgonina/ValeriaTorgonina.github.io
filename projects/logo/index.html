@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Test Task</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header">
+            <section class="main-header__info">
+                <div class="container">
+                    <button title="геолокация" class="location-btn">
+                        <svg class="location-btn__icon">
+                            <use xlink:href="assets/img/sprite.svg#location"></use>
+                        </svg>
+                        <span class="location-btn__text">Москва</span>
+                    </button>
+                    <div class="main-header__phones">
+                        <svg class="main-header__phones-icon">
+                            <use xlink:href="assets/img/sprite.svg#phone"></use>
+                        </svg>
+                        <a href="tel:81234567890" class="main-header__link">8-123-456-78-90</a>
+                        <pre>, </pre> 
+                        <a href="tel:83216540001" class="main-header__link"> 8-321-654-00-01</a>
+                    </div>
+                    <div class="main-header__mail">
+                        <svg class="main-header__mail-icon">
+                            <use xlink:href="assets/img/sprite.svg#mail"></use>
+                        </svg>
+                        <a href="mailto:info@email.ru" class="main-header__link">info@email.ru</a>
+                    </div>
+                </div>
+            </section>
+            <button class="menu-button" title="menu">
+                <svg class="menu-button__icon menu-button__icon--menu">
+                    <use xlink:href="./assets/img/sprite.svg#menu"></use>
+                </svg>
+                <svg class="menu-button__icon menu-button__icon--cross">
+                    <use xlink:href="./assets/img/sprite.svg#cross"></use>
+                </svg>
+            </button>
+            <a href="#" class="main-header__logo-mobil">лого</a>
+            <nav class="main-nav">
+                <div class="container">
+                    <a href="#" class="main-nav__logo">лого</a>
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">О компании</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Клиенты</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Отзывы</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Кейсы</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Цены</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Контакты</a>
+                        </li>
+                    </ul>
+                    <button class="button" title="заказать звонок">заказать звонок</button>
+                </div>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="container">
+                <section class="intro">
+                    <h1 class="main-title"><b>крупный заголовок</b><br> – в задании проверки ваших навыков.</h1>
+                </section>
+                <section class="main__article">
+                    <h2 class="title">Заголовок блока</h2>
+                    <p class="text">
+                        Это текст – «рыба», часто используемый в печати и web-дизайне. 
+                        Lorem Ipsum является стандартной «рыбой» для текстов на латинице 
+                        с начала XVI века. В то время некий безымянный печатник создал большую 
+                        коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки 
+                        образцов. 
+                    </p>
+                    <h3 class="sub-title">Подзаголовок</h3>
+                    <p class="text">
+                        Lorem Ipsum не только успешно пережил без заметных 
+                        изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации 
+                        в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 
+                        60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus 
+                        PageMaker, в шаблонах которых используется Lorem Ipsum.
+                    </p>
+                </section>
+                <div class="main__cards-inner">
+                    <section class="card">
+                        <h3 class="card__title">01</h3>
+                        <p class="card__text">
+                            Это текст – «рыба», часто используемый в печати и web-дизайне. 
+                            Lorem Ipsum является стандартной «рыбой» для текстов на латинице 
+                            с начала XVI века.
+                        </p>
+                        <span class="card__decor"></span>
+                    </section>
+                    <section class="card">
+                        <h3 class="card__title">02</h3>
+                        <p class="card__text">
+                            Это текст – «рыба», часто используемый в печати и web-дизайне. 
+                            Lorem Ipsum является стандартной «рыбой» для текстов на латинице 
+                            с начала XVI века.
+                        </p>
+                        <span class="card__decor"></span>
+                    </section>
+                    <section class="card">
+                        <h3 class="card__title">03</h3>
+                        <p class="card__text">
+                            Это текст – «рыба», часто используемый в печати и web-дизайне. 
+                            Lorem Ipsum является стандартной «рыбой» для текстов на латинице 
+                            с начала XVI века.
+                        </p>
+                        <span class="card__decor"></span>
+                    </section>
+                </div>
+                <section class="clients">
+                    <header class="clients__header">
+                        <h2 class="title">Наши клиенты</h2>
+                        <a href="#" class="link">Все клиенты</a>
+                        <div class="clients__btn-container">
+                            <button class="swiper-button-prev" id="clients-prev"></button>
+                            <button class="swiper-button-next" id="clients-next"></button>
+                        </div>
+                    </header>
+                    <div class="clients__slider">
+                        <div class="swiper-wrapper">
+                            <div class="clients__card swiper-slide">
+                                <img class="lazyload clients__card-image" alt="спортмастер" src="assets/img/stub-img.jpg" data-src="assets/img/sportmaster.jpg" height="100%" width="100%">
+                            </div>
+                            <div class="clients__card swiper-slide">
+                                <img class="lazyload clients__card-image" alt="пятерочка" src="assets/img/stub-img.jpg" data-src="assets/img/pyaterochka.jpg" height="100%" width="100%">
+                            </div>
+                            <div class="clients__card swiper-slide">
+                                <img class="lazyload clients__card-image" alt="дикси" src="assets/img/stub-img.jpg" data-src="assets/img/dixie.jpg" height="100%" width="100%">
+                            </div>
+                            <div class="clients__card swiper-slide">
+                                <img class="lazyload clients__card-image" alt="карусель" src="assets/img/stub-img.jpg" data-src="assets/img/carousel.jpg" height="100%" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <nav class="main-nav main-nav--dark">
+                <div class="container">
+                    <a href="#" class="main-nav__logo">лого</a>
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">О компании</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Клиенты</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Отзывы</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Кейсы</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Цены</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Контакты</a>
+                        </li>
+                    </ul>
+                    <button class="button button--dark" title="заказать звонок">заказать звонок</button>
+                </div>
+            </nav> 
+            <div class="container">
+                <div class="main-footer__info">
+                    <span class="main-footer__info-adress">ООО «ЛОГО». 133456, г. Москва, ул. 3-я Парковая, 10</span>
+                    <div class="main-footer__phones">
+                        <a href="tel:81234567890" class="main-footer__link">8-123-456-78-90</a>
+                        <pre>, </pre> 
+                        <a href="tel:83216540001" class="main-footer__link">8-321-654-00-01</a>
+                    </div>
+                    <div class="main-footer__mail">
+                        <a href="mailto:info@koopwork.ru" class="main-footer__link">info@koopwork.ru</a>
+                    </div>
+                </div>
+                <ul class="socials">
+                    <li class="socials__item">
+                        <a href="#" class="socials__link" target="_blank">
+                            <svg class="socials__icon">
+                                <use xlink:href="assets/img/sprite.svg#vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a href="#" class="socials__link" target="_blank">
+                            <svg class="socials__icon">
+                                <use xlink:href="assets/img/sprite.svg#fb"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a href="#" class="socials__link" target="_blank">
+                            <svg class="socials__icon">
+                                <use xlink:href="assets/img/sprite.svg#inst"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    
+    <script src="js/main-min.js"></script>
+</body>
+</html>
