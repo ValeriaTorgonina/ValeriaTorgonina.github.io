@@ -51,6 +51,8 @@ window.addEventListener('resize', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    AOS.init();
+    
     var windowWidth = window.innerWidth;
     if (windowWidth <= mediaQuerySize) {
         cardSliderInit();

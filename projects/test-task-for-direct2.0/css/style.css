@@ -626,7 +626,11 @@ svg {
     top: 50% !important;
     left: auto !important;
     right: 3%;
-    width: 8%; }
+    width: 8%;
+    transition: 0.3s; }
+    .banner__decor:hover {
+      -webkit-filter: brightness(1.2);
+              filter: brightness(1.2); }
   .banner__decor-img {
     width: 100%; }
   .banner__decor-snowflake {
@@ -907,14 +911,16 @@ svg {
   flex-wrap: wrap; }
   .swiper-wrapper .product-card {
     margin-bottom: 60px; }
-  .swiper-wrapper .swiper-pagination {
-    display: none; }
+
+.swiper-pagination {
+  display: none; }
 
 @media (max-width: 767.98px) {
   .swiper-wrapper {
     flex-wrap: nowrap; }
+  .swiper-pagination {
+    display: block; }
   .swiper-container-horizontal > .swiper-pagination-bullets {
-    display: block;
     bottom: 35px !important; } }
 
 .product-card {
