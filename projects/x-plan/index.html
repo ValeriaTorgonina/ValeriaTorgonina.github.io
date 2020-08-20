@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>x-plan</title>
+</head>
+<body>
+    <div class="wrapper" id="page">
+
+        <header class="main-header">
+            <div class="container">
+                <a href="#" class="main-header__logo">
+                    <img src="./assets/img/logo.png" alt="лого" class="main-header__logo-img">
+                    <span class="main-header__logo-text"><b>Pro</b>-помощник по тайм-менеджменту</span>
+                </a>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="blog">
+                <div class="container">
+                    <h2 class="blog__title">Блог разработки</h2>
+                    <div class="blog__decor"></div>
+                    <article class="article">
+                        <header class="article__header">
+                            <h3 class="article__title">Пишем php-код</h3>
+                            <time class="article__time" datetime="2020-09-24">24.09.2020</time>
+                        </header>
+                        <p class="article__text">
+                            По своей сути рыбатекст является альтернативой традиционному 
+                            lorem ipsum, который вызывает у некторых людей недоумение при 
+                            попытках прочитать рыбу текст. В отличии от lorem ipsum, текст 
+                            рыба на русском языке наполнит любой макет непонятным смыслом и 
+                            придаст неповторимый колорит советских времен.
+                        </p>
+                    </article>
+                    <button class="button" value="blog" @click="openPopup($event)">Читать блог</button>
+                </div>
+            </section>
+            <section class="timer">
+                <div class="container">
+                    <div class="timer__decor"></div>
+                    <div class="timer__content">
+                        <p class="timer__text">До <b>открытия</b> остаётся всего:</p>
+                        <div class="timer__counter">
+                            <div class="timer__counter-inner" id="days">
+                                <ul class="timer__counter-list">
+                                    <li class="timer__counter-item">1</li>
+                                    <li class="timer__counter-item">6</li>
+                                    <li class="timer__counter-item">2</li>
+                                </ul>
+                                <span class="timer__counter-text">Дней</span>
+                            </div>
+                            <div class="timer__counter-inner" id="hours">
+                                <ul class="timer__counter-list">
+                                    <li class="timer__counter-item">2</li>
+                                    <li class="timer__counter-item">3</li>
+                                </ul>
+                                <span class="timer__counter-text">Часов</span>
+                            </div>
+                            <div class="timer__counter-inner" id="minutes">
+                                <ul class="timer__counter-list">
+                                    <li class="timer__counter-item">4</li>
+                                    <li class="timer__counter-item">5</li>
+                                </ul>
+                                <span class="timer__counter-text">Минут</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer" id="footer">
+            <div class="container">
+                <div class="main-footer__decor">
+                    <svg class="main-footer__decor-icon">
+                        <use xlink:href="#bell"></use>
+                    </svg>
+                </div>
+                <h3 class="main-footer__title">Не пропустите открытие!</h3>
+                <p class="main-footer__text">Выберите способ связи и оставьте контактные данные. Мы Вас первыми оповестим об открытии сервиса.</p>
+                <div class="main-footer__btns-group">
+                    <button class="button button--light" :class="formType === 'mail' ? 'active' : ''" @click="footerBtnClick('mail')">
+                        <svg class="button__icon">
+                            <use xlink:href="#mail"></use>
+                        </svg>
+                        <span class="button__text">Электронная почта</span>
+                    </button>
+                    <button class="button button--light" :class="formType === 'socials' ? 'active' : ''" @click="footerBtnClick('socials')">
+                        <svg class="button__icon">
+                            <use xlink:href="#vk"></use>
+                        </svg>
+                        <svg class="button__icon">
+                            <use xlink:href="#fb"></use>
+                        </svg>
+                        <svg class="button__icon">
+                            <use xlink:href="#ok"></use>
+                        </svg>
+                        <span class="button__text">Социальные сети</span>
+                    </button>
+                    <button class="button button--light" :class="formType === 'sms' ? 'active' : ''" @click="footerBtnClick('sms')">>
+                        <svg class="button__icon">
+                            <use xlink:href="#phone"></use>
+                        </svg>
+                        <svg class="button__icon">
+                            <use xlink:href="#telegram"></use>
+                        </svg>
+                        <svg class="button__icon">
+                            <use xlink:href="#whatsapp"></use>
+                        </svg>
+                        <span class="button__text">SMS и мессенджеры</span>
+                    </button>
+                </div>
+                <p class="main-footer__text">{{ formData.formText }}</p>
+                <form action="" @submit="checkValidation($event)" class="main-footer__form">
+                    <input type="text" class="input" placeholder="Как вас зовут?">
+                    <input required="" :type="formData.inputType" class="input" :placeholder="formData.inputPlaceholder">
+                    <button type="submit" class="button" value="success" @click="openPopup($event)">Держать в курсе</button>
+                </form>
+            </div>
+        </footer>
+        <transition v-cloak="" name="fade">
+            <div class="popup-wrapper" id="popup" v-show="showBlog">
+                <section class="popup">
+                    <div class="popup__blog">
+                        <span class="popup__title">Открыть блог</span>
+                        <ul class="socials">
+                            <li class="socials__item">
+                                <a href="#" class="socials__link" target="_blank">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="#site-circle"></use>
+                                    </svg>
+                                    <span class="socials__text">На сайте</span>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a href="#" class="socials__link" target="_blank">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="#telegram-circle"></use>
+                                    </svg>
+                                    <span class="socials__text">Telegram</span>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a href="#" class="socials__link" target="_blank">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="#vk-circle"></use>
+                                    </svg>
+                                    <span class="socials__text">Вконтакте</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="close-btn" @click="closePopup()">
+                        <svg class="close-btn__icon">
+                            <use xlink:href="#cross"></use>
+                        </svg>
+                    </button>
+                </section>
+                <div class="overlay" @click="closePopup()"></div>
+            </div>
+        </transition>
+        <transition v-cloak="" name="fade">
+            <div class="popup-wrapper" id="popup" v-show="showSuccess">
+                <section class="popup">
+                    <div class="popup__success">
+                        <div class="popup__success-decor"></div>
+                        <span class="popup__title">Спасибо</span>
+                        <p class="popup__text">Вы узнаете об открытии одним из первых!</p>
+                    </div>
+                    <button class="close-btn" @click="closePopup()">
+                        <svg class="close-btn__icon">
+                            <use xlink:href="#cross"></use>
+                        </svg>
+                    </button>
+                </section>
+                <div class="overlay" @click="closePopup()"></div>
+            </div>
+        </transition>
+    </div>
+
+    <div id="sprite-container" style="display: none;"></div>
+    <script src="js/sprite.cache.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
