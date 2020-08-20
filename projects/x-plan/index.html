@@ -39,7 +39,7 @@
                             придаст неповторимый колорит советских времен.
                         </p>
                     </article>
-                    <button class="button" value="blog" @click="openPopup($event)">Читать блог</button>
+                    <button class="button" @click="openPopup('blog')">Читать блог</button>
                 </div>
             </section>
             <section class="timer">
@@ -121,7 +121,7 @@
                 <form action="" @submit="checkValidation($event)" class="main-footer__form">
                     <input type="text" class="input" placeholder="Как вас зовут?">
                     <input required="" :type="formData.inputType" class="input" :placeholder="formData.inputPlaceholder">
-                    <button type="submit" class="button" value="success" @click="openPopup($event)">Держать в курсе</button>
+                    <button type="submit" class="button" @click="openPopup('success')">Держать в курсе</button>
                 </form>
             </div>
         </footer>
@@ -142,7 +142,7 @@
                             <li class="socials__item">
                                 <a href="#" class="socials__link" target="_blank">
                                     <svg class="socials__icon">
-                                        <use xlink:href="#telegram-circle"></use>
+                                        <use xlink:href="#telegram-circle"></use> 
                                     </svg>
                                     <span class="socials__text">Telegram</span>
                                 </a>

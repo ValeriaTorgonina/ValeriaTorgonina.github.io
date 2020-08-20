@@ -46,8 +46,8 @@ var page = new Vue({
                 this.formData = this.newFormData.sms;
             }
         },
-        openPopup: function(event) {
-            if(value === 'blog') {
+        openPopup: function(value) {
+            if(value === 'blog') { 
                 this.showBlog = true;
             }
             if(value === 'success') {
