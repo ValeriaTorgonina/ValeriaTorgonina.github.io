@@ -1,7 +1,7 @@
 ;(function(window, document) {
     'use strict';
     var file = './assets/img/sprite.svg', // путь к файлу спрайта на сервере
-        revision = 4;  // версия спрайта
+        revision = 3;  // версия спрайта
     if (
         !document.createElementNS 
         || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
