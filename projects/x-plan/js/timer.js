@@ -4,7 +4,7 @@ var myVar = setInterval(function() {
 }, 1000);
 
 function myTimer() {
-    var dateThen = new Date(2020 , 11, 0);
+    var dateThen = new Date(2021 , 1, 1);
     var dateNow = new Date();
     var diff = dateThen - dateNow;
 

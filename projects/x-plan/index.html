@@ -9,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>x-plan</title>
+    <base target="_blank">
 </head>
 <body>
-    <div class="wrapper" id="page">
+    <div class="wrapper" id="page" :class="showBlog || showSuccess ? 'no-scroll' : ''">
 
         <header class="main-header">
             <div class="container">
@@ -24,94 +25,205 @@
 
         <main class="main">
             <section class="timer">
-                <div class="container">
-                    <div class="timer__decor"></div>
-                    <div class="timer__content">
-                        <p class="timer__text">До <b>открытия</b> остаётся всего:</p>
-                        <div class="timer__counter">
-                            <div class="timer__counter-inner" id="days">
-                                <ul class="timer__counter-list">
-                                    <li class="timer__counter-item">1</li>
-                                    <li class="timer__counter-item">6</li>
-                                    <li class="timer__counter-item">2</li>
-                                </ul>
-                                <span class="timer__counter-text">Дней</span>
-                            </div>
-                            <div class="timer__counter-inner" id="hours">
-                                <ul class="timer__counter-list">
-                                    <li class="timer__counter-item">2</li>
-                                    <li class="timer__counter-item">3</li>
-                                </ul>
-                                <span class="timer__counter-text">Часов</span>
-                            </div>
-                            <div class="timer__counter-inner" id="minutes">
-                                <ul class="timer__counter-list">
-                                    <li class="timer__counter-item">4</li>
-                                    <li class="timer__counter-item">5</li>
-                                </ul>
-                                <span class="timer__counter-text">Минут</span>
-                            </div>
+                <div class="timer__decor"></div>
+                <div class="timer__content">
+                    <p class="timer__text">До <b>открытия</b> остаётся всего:</p>
+                    <div class="timer__counter">
+                        <div class="timer__counter-inner" id="days">
+                            <ul class="timer__counter-list">
+                                <li class="timer__counter-item">1</li>
+                                <li class="timer__counter-item">6</li>
+                                <li class="timer__counter-item">2</li>
+                            </ul>
+                            <span class="timer__counter-text">Дней</span>
+                        </div>
+                        <div class="timer__counter-inner" id="hours">
+                            <ul class="timer__counter-list">
+                                <li class="timer__counter-item">2</li>
+                                <li class="timer__counter-item">3</li>
+                            </ul>
+                            <span class="timer__counter-text">Часов</span>
+                        </div>
+                        <div class="timer__counter-inner" id="minutes">
+                            <ul class="timer__counter-list">
+                                <li class="timer__counter-item">4</li>
+                                <li class="timer__counter-item">5</li>
+                            </ul>
+                            <span class="timer__counter-text">Минут</span>
                         </div>
                     </div>
-                    <div class="timer__btn-container">
-                        <span class="timer__btn-text">Ещё есть время:</span>
-                        <a href="https://x-plan.pro/" class="timer__btn" target="_blank">
-                            Посетить наш блог
+                </div>
+                <div class="timer__btn-container">
+                    <span class="timer__btn-text">Ещё есть время:</span>
+                    <a href="http://x-plan.pro/" class="timer__btn" target="_blank">
+                        Посетить наш блог
+                    </a>
+                </div>
+            </section>
+            <section class="subscribe" id="form">
+                <div class="container">
+                    <div class="subscribe__decor">
+                        <svg class="subscribe__decor-icon">
+                            <use xlink:href="assets/img/sprite.svg#bell"></use>
+                        </svg>
+                    </div>
+                    <h3 class="subscribe__title">Не пропустите открытие!</h3>
+                    <p class="subscribe__text"><b>Выберите способ связи</b> и оставьте контактные данные. Мы Вас первыми оповестим об открытии сервиса.</p>
+                    <div class="subscribe__btns-group">
+                        <button class="button button--light" :class="formType === 'mail' ? 'active' : ''" @click="footerBtnClick('mail')">
+                            <svg class="button__icon">
+                                <use xlink:href="assets/img/sprite.svg#mail"></use>
+                            </svg>
+                            <span class="button__text">Электронная почта</span>
+                        </button>
+                        <button class="button button--light" :class="formType === 'socials' ? 'active' : ''" @click="footerBtnClick('socials')">
+                            <svg class="button__icon">
+                                <use xlink:href="assets/img/sprite.svg#vk"></use>
+                            </svg>
+                            <svg class="button__icon">
+                                <use xlink:href="assets/img/sprite.svg#fb"></use>
+                            </svg>
+                            <svg class="button__icon">
+                                <use xlink:href="assets/img/sprite.svg#ok"></use>
+                            </svg>
+                            <span class="button__text">Социальные сети</span>
+                        </button>
+                        <button class="button button--light" :class="formType === 'sms' ? 'active' : ''" @click="footerBtnClick('sms')">>
+                            <svg class="button__icon">
+                                <use xlink:href="assets/img/sprite.svg#phone"></use>
+                            </svg>
+                            <svg class="button__icon">
+                                <use xlink:href="assets/img/sprite.svg#telegram"></use>
+                            </svg>
+                            <svg class="button__icon">
+                                <use xlink:href="assets/img/sprite.svg#whatsapp"></use>
+                            </svg>
+                            <span class="button__text">SMS и мессенджеры</span>
+                        </button>
+                    </div>
+                    <p class="subscribe__form-text">Мы отправим <b>письмо</b> по этому адресу:</p>
+                    <form action="" class="subscribe__form">
+                        <input type="text" class="input" placeholder="Как вас зовут?">
+                        <input required="" type="email" class="input" placeholder="Ваш e-mail">
+                        <button type="submit" class="button" @click="openPopup('success')">Держать в курсе</button>
+                    </form>
+                </div>
+            </section>
+            <footer class="main-footer" id="main-footer">
+                <div class="main-footer__logo">
+                    <img src="assets/img/footer-logo.png" alt="X-plan.pro" class="main-footer__logo-img">
+                    <small class="main-footer__copyrigh">© X-plan.pro, 2020—2024</small>
+                </div>
+                <div class="projects container marquee" id="marquee">
+                    <div class="marquee__inner">
+                        <a href="#">
+                            <img src="assets/img/Goodly-logo2.png" alt="goodly.pro" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/sitnov-logo2.png" alt="илья ситнов" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/cfv2.png" alt="cfv" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/video-studio.png" alt="video-studio.pro" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/coin-logo2.png" alt="coin" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/propiar_logo2.png" alt="propiar" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/smart-logo2.png" alt="умный доход" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/v-piare-logo2.png" alt="v-piare" class="projects__item">
+                        </a>
+                        <a href="#">
+                            <img src="assets/img/kakzarabotat-logo2.png" alt="как заработать" class="projects__item">
                         </a>
                     </div>
                 </div>
-            </section>
+                <nav class="footer-nav">
+                    <ul class="footer-nav__list container">
+                        <li class="footer-nav__item">
+                            <a target="_blank" href="#" class="footer-nav__link">PRO Видео</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a target="_blank" href="#" class="footer-nav__link">Чек-лист</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a target="_blank" href="#" class="footer-nav__link">Трансляция и Youtube</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a target="_blank" href="#" class="footer-nav__link">Три шага к успеху</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a target="_blank" href="#" class="footer-nav__link">Наши видео</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a target="_blank" href="#" class="footer-nav__link">Отзывы</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a target="_blank" href="#" class="footer-nav__link">Результаты вместе с нами</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="main-footer__bottom">
+                    <div class="container">
+                        <div class="main-footer__support">
+                            <span class="main-footer__support-text">Тех. поддержка ответит на вопросы:</span>
+                            <a target="_blank" href="mailto:Support@x-plan.pro" class="main-footer__support-mail">Support@x-plan.pro</a>
+                        </div>
+                        <div class="main-footer__docs">
+                            <a target="_blank" href="" class="main-footer__docs-link">Политика конфиденциальности</a>
+                            <a target="_blank" href="" class="main-footer__docs-link">Публичная оферта</a>
+                        </div>
+                        <div class="main-footer__socials">
+                            <ul class="main-footer__socials-list">
+                                <li class="main-footer__socials-item">
+                                    <a target="_blank" href="#" class="main-footer__socials-link fb" title="facebook">
+                                        <svg class="main-footer__socials-icon">
+                                            <use xlink:href="assets/img/sprite.svg#footer-fb"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="main-footer__socials-item">
+                                    <a target="_blank" href="#" class="main-footer__socials-link vk" title="vkontakte">
+                                        <svg class="main-footer__socials-icon">
+                                            <use xlink:href="assets/img/sprite.svg#footer-vk"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="main-footer__socials-item">
+                                    <a target="_blank" href="#" class="main-footer__socials-link youtube" title="youtube">
+                                        <svg class="main-footer__socials-icon">
+                                            <use xlink:href="assets/img/sprite.svg#footer-youtube"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="main-footer__socials-item">
+                                    <a target="_blank" href="#" class="main-footer__socials-link inst" title="instagram">
+                                        <svg class="main-footer__socials-icon">
+                                            <use xlink:href="assets/img/sprite.svg#footer-Instagram"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="main-footer__socials-item">
+                                    <a target="_blank" href="#" class="main-footer__socials-link twitter" title="twitter">
+                                        <svg class="main-footer__socials-icon">
+                                            <use xlink:href="assets/img/sprite.svg#footer-twitter"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </main>
 
-        <footer class="main-footer" id="footer">
-            <div class="container">
-                <div class="main-footer__decor">
-                    <svg class="main-footer__decor-icon">
-                        <use xlink:href="#bell"></use>
-                    </svg>
-                </div>
-                <h3 class="main-footer__title">Не пропустите открытие!</h3>
-                <p class="main-footer__text"><b>Выберите способ связи</b> и оставьте контактные данные. Мы Вас первыми оповестим об открытии сервиса.</p>
-                <div class="main-footer__btns-group">
-                    <button class="button button--light" :class="formType === 'mail' ? 'active' : ''" @click="footerBtnClick('mail')">
-                        <svg class="button__icon">
-                            <use xlink:href="#mail"></use>
-                        </svg>
-                        <span class="button__text">Электронная почта</span>
-                    </button>
-                    <button class="button button--light" :class="formType === 'socials' ? 'active' : ''" @click="footerBtnClick('socials')">
-                        <svg class="button__icon">
-                            <use xlink:href="#vk"></use>
-                        </svg>
-                        <svg class="button__icon">
-                            <use xlink:href="#fb"></use>
-                        </svg>
-                        <svg class="button__icon">
-                            <use xlink:href="#ok"></use>
-                        </svg>
-                        <span class="button__text">Социальные сети</span>
-                    </button>
-                    <button class="button button--light" :class="formType === 'sms' ? 'active' : ''" @click="footerBtnClick('sms')">>
-                        <svg class="button__icon">
-                            <use xlink:href="#phone"></use>
-                        </svg>
-                        <svg class="button__icon">
-                            <use xlink:href="#telegram"></use>
-                        </svg>
-                        <svg class="button__icon">
-                            <use xlink:href="#whatsapp"></use>
-                        </svg>
-                        <span class="button__text">SMS и мессенджеры</span>
-                    </button>
-                </div>
-                <p class="main-footer__form-text">Мы отправим <b>письмо</b> по этому адресу:</p>
-                <form action="" class="main-footer__form">
-                    <input type="text" class="input" placeholder="Как вас зовут?">
-                    <input required="" type="email" class="input" placeholder="Ваш e-mail">
-                    <button type="submit" class="button" @click="openPopup('success')">Держать в курсе</button>
-                </form>
-            </div>
-        </footer>
         <transition v-cloak="" name="fade">
             <div class="popup-wrapper" id="popup" v-show="showBlog">
                 <section class="popup">
@@ -121,7 +233,7 @@
                             <li class="socials__item">
                                 <a href="#" class="socials__link" target="_blank">
                                     <svg class="socials__icon">
-                                        <use xlink:href="#site-circle"></use>
+                                        <use xlink:href="assets/img/sprite.svg#site-circle"></use>
                                     </svg>
                                     <span class="socials__text">На сайте</span>
                                 </a>
@@ -129,7 +241,7 @@
                             <li class="socials__item">
                                 <a href="#" class="socials__link" target="_blank">
                                     <svg class="socials__icon">
-                                        <use xlink:href="#telegram-circle"></use>
+                                        <use xlink:href="assets/img/sprite.svg#telegram-circle"></use>
                                     </svg>
                                     <span class="socials__text">Telegram</span>
                                 </a>
@@ -137,7 +249,7 @@
                             <li class="socials__item">
                                 <a href="#" class="socials__link" target="_blank">
                                     <svg class="socials__icon">
-                                        <use xlink:href="#vk-circle"></use>
+                                        <use xlink:href="assets/img/sprite.svg#vk-circle"></use>
                                     </svg>
                                     <span class="socials__text">Вконтакте</span>
                                 </a>
@@ -145,7 +257,7 @@
                             <li class="socials__item">
                                 <a href="#" class="socials__link" target="_blank">
                                     <svg class="socials__icon">
-                                        <use xlink:href="#twitter-circle"></use>
+                                        <use xlink:href="assets/img/sprite.svg#twitter-circle"></use>
                                     </svg>
                                     <span class="socials__text">Twitter</span>
                                 </a>
@@ -153,7 +265,7 @@
                             <li class="socials__item">
                                 <a href="#" class="socials__link" target="_blank">
                                     <svg class="socials__icon">
-                                        <use xlink:href="#instagram-circle"></use>
+                                        <use xlink:href="assets/img/sprite.svg#instagram-circle"></use>
                                     </svg>
                                     <span class="socials__text">Instagram</span>
                                 </a>
@@ -162,7 +274,7 @@
                     </div>
                     <button class="close-btn" @click="closePopup()">
                         <svg class="close-btn__icon">
-                            <use xlink:href="#cross"></use>
+                            <use xlink:href="assets/img/sprite.svg#cross"></use>
                         </svg>
                     </button>
                 </section>
@@ -179,7 +291,7 @@
                     </div>
                     <button class="close-btn" @click="closePopup()">
                         <svg class="close-btn__icon">
-                            <use xlink:href="#cross"></use>
+                            <use xlink:href="assets/img/sprite.svg#cross"></use>
                         </svg>
                     </button>
                 </section>
@@ -188,8 +300,6 @@
         </transition>
     </div>
 
-    <div id="sprite-container" style="display: none;"></div>
-    <script src="js/sprite.cache.js"></script>
     <script src="js/timer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/main.js"></script>
