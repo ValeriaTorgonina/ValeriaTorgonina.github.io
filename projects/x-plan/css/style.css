@@ -422,6 +422,7 @@ ul {
 a {
   text-decoration: none;
   color: #333333;
+  transition: 0.3s;
   cursor: pointer; }
   a:hover {
     color: #E73151; }
@@ -460,32 +461,6 @@ svg {
 [v-cloak] {
   display: none; }
 
-.marquee {
-  white-space: nowrap;
-  overflow: hidden; }
-
-.marquee__inner {
-  display: inline-block;
-  padding-left: 100%;
-  -webkit-animation: marquee 15s linear infinite;
-          animation: marquee 15s linear infinite; }
-
-.marquee__inner:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused; }
-
-@-webkit-keyframes marquee {
-  0% {
-    transform: translate(0, 0); }
-  100% {
-    transform: translate(-100%, 0); } }
-
-@keyframes marquee {
-  0% {
-    transform: translate(0, 0); }
-  100% {
-    transform: translate(-100%, 0); } }
-
 .main-header {
   position: relative;
   padding: 30px 0;
@@ -522,8 +497,8 @@ svg {
     display: block;
     width: 300px;
     height: 80px;
-    margin-bottom: 15px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    margin-bottom: 10px; }
   .main-footer__copyrigh {
     display: block;
     margin: 0 auto;
@@ -549,8 +524,14 @@ svg {
     display: block;
     margin-bottom: 10px; }
   .main-footer__support-mail {
-    font-size: 14px;
-    color: #BEC4CC; }
+    display: block;
+    width: 125px;
+    height: 18px;
+    background: url("../assets/img/mail.jpg") 50% 50% no-repeat;
+    background-size: contain; }
+    .main-footer__support-mail:hover {
+      background: url("../assets/img/mail-hover.jpg") 50% 50% no-repeat;
+      background-size: contain; }
   .main-footer__docs {
     text-align: center; }
   .main-footer__docs-link {
@@ -603,6 +584,8 @@ svg {
       background-position-x: calc(50% - 160px); }
     .main-footer__support-text {
       margin-bottom: 0; }
+    .main-footer__support-mail {
+      margin: 0 auto; }
     .main-footer__docs {
       padding-top: 15px; }
     .main-footer__docs-link {
@@ -617,7 +600,7 @@ svg {
 
 .projects {
   background: #2A333D;
-  padding: 30px 0; }
+  height: 100px; }
   .projects__item {
     height: 40px;
     padding: 0 15px; }
@@ -626,7 +609,41 @@ svg {
       height: 30px; } }
   @media (max-width: 1260px) {
     .projects {
-      padding: 15px 0; } }
+      height: 80px; } }
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; }
+
+.marquee__inner {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(0%, -50%);
+  -webkit-animation: marquee 30s linear infinite;
+          animation: marquee 30s linear infinite; }
+  .marquee__inner--clone {
+    display: inline-block;
+    -webkit-animation-delay: 15s;
+            animation-delay: 15s; }
+
+.marquee:hover .marquee__inner {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused; }
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translate(0, -50%); }
+  100% {
+    transform: translate(-200%, -50%); } }
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, -50%); }
+  100% {
+    transform: translate(-200%, -50%); } }
 
 .footer-nav {
   background: #242D36; }
