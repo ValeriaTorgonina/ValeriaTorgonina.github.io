@@ -422,7 +422,6 @@ ul {
 a {
   text-decoration: none;
   color: #333333;
-  transition: 0.3s;
   cursor: pointer; }
   a:hover {
     color: #E73151; }
