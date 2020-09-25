@@ -9,10 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>video-studio</title>
+    <base target="_blank">
 </head>
 
 <body>
@@ -20,7 +19,7 @@
 
         <header class="main-header">
             <div class="container">
-                <a target="_blank" href="#" class="main-header__logo">
+                <a target="_blank" href="landing.html" class="main-header__logo">
                     <img src="./assets/img/icons/logo.svg" alt="лого" class="main-header__logo-img">
                 </a>
                 <nav class="main-nav">
@@ -35,11 +34,10 @@
                             <a target="_blank" href="#" class="main-nav__link">Видео</a>
                         </li>
                         <li class="dropdown main-nav__item">
-                            <a class="dropdown-toggle main-nav__link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle main-nav__link" href="#" role="button">
                                 Товары
                             </a>
-                            
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-menu">
                                 <a target="_blank" class="dropdown-item" href="#">Раздел 1</a>
                                 <a target="_blank" class="dropdown-item" href="#">Раздел 2</a>
                                 <a target="_blank" class="dropdown-item" href="#">Раздел 3</a>
@@ -52,7 +50,12 @@
                             <a target="_blank" href="#" class="main-nav__link">Инструменты</a>
                         </li>
                         <li class="main-nav__item">
-                            <button class="login-btn">Войти</button>
+                            <button class="login-btn">
+                                <svg class="login-btn__icon">
+                                    <use xlink:href="assets/img/sprite.svg#user"></use>
+                                </svg>
+                                Войти
+                            </button>
                         </li>
                     </ul>
                 </nav>
@@ -77,34 +80,34 @@
                     <button class="button">пройти первые шаги</button>
                 </div>
             </section>
-            <section class="products">
+            <section class="relevant">
                 <div class="container">
                     <h2 class="title title--light">Вас могут заинтересовать другие <b>наши курсы</b></h2>
-                    <div class="products__inner">
-                        <div class="products__card">
-                            <img src="assets/img/products/product1.png" alt="дорожная карта" class="products__img">
+                    <div class="relevant__inner">
+                        <div class="relevant__card">
+                            <img src="assets/img/relevant/product1.png" alt="дорожная карта" class="relevant__img">
                             <p class="text text-light">
                                 Дорожная карта денежного роста (путь к первым 100.000 руб./мес.) 
                                 + Права перепродажи
                             </p>
                             <button class="button">ИЗУЧИТЬ</button>
                         </div>
-                        <div class="products__card">
-                            <img src="assets/img/products/product2.png" alt="Комплект с правами перепродажи" class="products__img">
+                        <div class="relevant__card">
+                            <img src="assets/img/relevant/product2.png" alt="Комплект с правами перепродажи" class="relevant__img">
                             <p class="text text-light">
                                 Комплект с правами перепродажи "Как заработать в Интернете первые 5000 рублей за 10 дней"
                             </p>
                             <button class="button">ИЗУЧИТЬ</button>
                         </div>
-                        <div class="products__card">
-                            <img src="assets/img/products/product3.png" alt="Бизнес завтрак с Ильей Ситновым" class="products__img">
+                        <div class="relevant__card">
+                            <img src="assets/img/relevant/product3.png" alt="Бизнес завтрак с Ильей Ситновым" class="relevant__img">
                             <p class="text text-light">
                                 Права перепродажи + Бизнес завтрак с Ильей Ситновым
                             </p>
                             <button class="button">ИЗУЧИТЬ</button>
                         </div>
-                        <div class="products__card">
-                            <img src="assets/img/products/product4.png" alt="денежное мышление" class="products__img">
+                        <div class="relevant__card">
+                            <img src="assets/img/relevant/product4.png" alt="денежное мышление" class="relevant__img">
                             <p class="text text-light">
                                 Права перепродажи + 56 готовых инструкций-шаблонов
                             </p>
@@ -263,10 +266,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="js/main.js"></script>
 </body>

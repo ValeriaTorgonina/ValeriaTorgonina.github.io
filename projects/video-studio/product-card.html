@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>video-studio</title>
+    <base target="_blank">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="main-header">
+            <div class="container">
+                <a target="_blank" href="landing.html" class="main-header__logo">
+                    <img src="./assets/img/icons/logo.svg" alt="лого" class="main-header__logo-img">
+                </a>
+                <nav class="main-nav">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a target="_blank" href="#" class="main-nav__link active">Главная</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a target="_blank" href="#" class="main-nav__link">Контакты</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a target="_blank" href="#" class="main-nav__link">Видео</a>
+                        </li>
+                        <li class="dropdown main-nav__item">
+                            <a class="dropdown-toggle main-nav__link" href="#" role="button">
+                                Товары
+                            </a>
+                            <div class="dropdown-menu">
+                                <a target="_blank" class="dropdown-item" href="#">Раздел 1</a>
+                                <a target="_blank" class="dropdown-item" href="#">Раздел 2</a>
+                                <a target="_blank" class="dropdown-item" href="#">Раздел 3</a>
+                            </div>
+                        </li>
+                        <li class="main-nav__item">
+                            <a target="_blank" href="#" class="main-nav__link">Консультация</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a target="_blank" href="#" class="main-nav__link">Инструменты</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <button class="login-btn">
+                                <svg class="login-btn__icon">
+                                    <use xlink:href="assets/img/sprite.svg#user"></use>
+                                </svg>
+                                Войти
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <a id="info_link" class="mob_q main-header__info header-info clickable">
+                    <div class="border_info"></div>
+                    <div class="content_info"></div>
+                </a>
+                <button class="mobile-burger" title="меню">
+                    <svg class="mobile-burger__icon">
+                        <use xlink:href="assets/img/sprite.svg#menu"></use>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="main products">
+            <header class="products-header">
+                <div class="container">
+                    <nav class="products-nav">
+                        <button class="products-nav__btn active">Все товары</button>
+                        <button class="products-nav__btn">Оборудование для студии</button>
+                        <button class="products-nav__btn">Камеры</button>
+                        <button class="products-nav__btn">Футболки</button>
+                        <button class="products-nav__btn">Полиграфия</button>
+                    </nav>
+                    <button class="mobile-burger" title="меню">
+                        <svg class="mobile-burger__icon">
+                            <use xlink:href="assets/img/sprite.svg#menu"></use>
+                        </svg>
+                    </button>
+                    <div class="products-header__basket empty">
+                        <div class="products-header__basket-inner">
+                            <svg class="products-header__basket-icon">
+                                <use xlink:href="assets/img/sprite.svg#basket"></use>
+                            </svg>
+                        </div>
+                        <span class="products-header__basket-text">Корзина</span>
+                        <span class="products-header__basket-count">0 товаров</span>
+                    </div>
+                </div>
+            </header>
+            <section class="product-details">
+                <div class="container">
+                    <a href="#" class="product-details__back-link"><i>←	</i> Вернуться в <b>“Футболки”</b></a>
+                    <div class="product-details__inner row">
+                        <div class="product-details__images col-sm-6">
+                            <div class="product-details__img-row">
+                                <img class="active" src="assets/img/card-details/t-shirt.jpg" alt="">
+                                <img src="assets/img/card-details/t-shirt2.jpg" alt="">
+                                <img src="assets/img/card-details/t-shirt3.jpg" alt="">
+                            </div>
+                            <img src="assets/img/card-details/t-shirt.jpg" alt="" class="product-details__big-img">
+                        </div>
+                        <div class="product-details__content col-sm-6">
+                            <h2 class="products__title">Футболка “i love my GOODLY.PRO”</h2>
+                            <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                            <div class="discount">скидка 30%</div>
+                            <p class="text">
+                                Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать 
+                                несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
+                                начинающему оратору отточить навык публичных выступлений в домашних условиях.
+                            </p>
+                            <div class="row pb-3">
+                                <div class="col-sm-6">
+                                    <h3 class="products__sub-title">Размер</h3>
+                                    <a href="#" class="product-details__table-link">Таблица размеров</a>
+                                    <div class="group size">
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="checkbox__input" name="size" value="s">
+                                            <div class="checkbox__decor">s</div>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="checkbox__input" name="size" value="m">
+                                            <div class="checkbox__decor">m</div>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="checkbox__input" name="size" value="l">
+                                            <div class="checkbox__decor">l</div>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="checkbox__input" name="size" value="xl">
+                                            <div class="checkbox__decor">xl</div>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="checkbox__input" name="size" value="xxl">
+                                            <div class="checkbox__decor">xxl</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h3 class="products__sub-title">Количество</h3>
+                                    <div class="select">
+                                        <div class="select__current" tabindex="1">
+                                            <div class="select__value">
+                                                <input class="select__input" type="radio" id="0" value="1" name="count" checked="checked">
+                                                <p class="select__input-text">1 шт</p>
+                                            </div>
+                                            <div class="select__value">
+                                                <input class="select__input" type="radio" id="1" value="2" name="count">
+                                                <p class="select__input-text">2 шт</p>
+                                            </div>
+                                            <div class="select__value">
+                                                <input class="select__input" type="radio" id="2" value="3" name="count">
+                                                <p class="select__input-text">3 шт</p>
+                                            </div>
+                                            <div class="select__value">
+                                                <input class="select__input" type="radio" id="3" value="4" name="count">
+                                                <p class="select__input-text">4 шт</p>
+                                            </div>
+                                            <div class="select__value">
+                                                <input class="select__input" type="radio" id="4" value="5" name="count">
+                                                <p class="select__input-text">5 шт</p>
+                                            </div>
+                                            <svg class="select__icon">
+                                                <use xlink:href="assets/img/sprite.svg#select-arrow"></use>
+                                            </svg>
+                                        </div>
+                                        <ul class="select__list">
+                                            <li><label class="select__option" for="0" aria-hidden="aria-hidden">1 шт</label></li>
+                                            <li><label class="select__option" for="1" aria-hidden="aria-hidden">2 шт</label></li>
+                                            <li><label class="select__option" for="2" aria-hidden="aria-hidden">3 шт</label></li>
+                                            <li><label class="select__option" for="3" aria-hidden="aria-hidden">4 шт</label></li>
+                                            <li><label class="select__option" for="4" aria-hidden="aria-hidden">5 шт</label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-gray row">
+                                <div class="col-sm-5">
+                                    <div class="product-details__old-price">1200 руб.</div>
+                                    <div class="product-details__new-price">990 руб.</div>
+                                </div>
+                                <div class="col-sm-7 product-details__delivery">
+                                    <div class="product-details__delivery-icon"></div>
+                                    <span class="product-details__delivery-text">
+                                        Доставка по всему миру ТК “СДЭК”
+                                    </span>
+                                    <small class="product-details__delivery-desc">
+                                        Стоимость доставки будет расчитана при оформлении заказа
+                                    </small>
+                                </div>
+                            </div>
+                            <h3 class="products__sub-title">цвет</h3>
+                            <span class="text product-details__color">Вы выбрали<b> ”Черный”</b></span>
+                            <div class="group color">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="color" value="black">
+                                    <div class="checkbox__decor" style="background-color:#111111; color:#111111;"></div>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="color" value="red">
+                                    <div class="checkbox__decor" style="background-color:#E21B3A; color:#E21B3A;"></div>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="color" value="blue">
+                                    <div class="checkbox__decor" style="background-color:#0074D7; color:#0074D7;"></div>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="color" value="green">
+                                    <div class="checkbox__decor" style="background-color:#18CE31; color:#18CE31;"></div>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="color" value="yellow">
+                                    <div class="checkbox__decor" style="background-color:#F8B54A; color:#F8B54A;"></div>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="color" value="gray">
+                                    <div class="checkbox__decor" style="background-color:#CECECE; color:#CECECE;"></div>
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox__input" name="color" value="white">
+                                    <div class="checkbox__decor checkbox__decor--white" style="background-color:#fff; color:#fff; border-color:#96A4B0;"></div>
+                                </label>
+                            </div>
+                            <button class="button">ДОБАВИТЬ В КОРЗИНУ</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="actual">
+                <div class="container">
+                    <h2 class="products__title">ПРОСМОТРЕННЫЕ ТОВАРЫ</h2>
+                    <div class="actual__slider">
+                        <div class="actual__list swiper-wrapper">
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-disc">50 000 руб.</span>
+                                    <span class="product-card__price-old">83 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-normal">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-disc">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-disc">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-normal">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                        </div>
+                    </div> 
+                    <div class="slider-btns">
+                        <div class="swiper-button-prev" id="actual-prev"></div>
+                        <div class="swiper-button-next" id="actual-next"></div>
+                    </div>
+                    <div class="swiper-pagination" id="actual-pagination"></div>
+                </div>
+            </section>
+            <section class="checked block-gray">
+                <div class="container">
+                    <h2 class="products__title">ПРОСМОТРЕННЫЕ ТОВАРЫ</h2>
+                    <div class="checked__slider">
+                        <div class="checked__list swiper-wrapper">
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-disc">50 000 руб.</span>
+                                    <span class="product-card__price-old">83 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-normal">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-disc">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-disc">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                            <section class="product-card swiper-slide">
+                                <div class="product-card__img-inner">
+                                    <img src="assets/img/products/product1.png" alt="" class="product-card__img">
+                                    <div class="exclusive">ЭКСКЛЮЗИВ</div>
+                                    <div class="discount">скидка 30%</div>
+                                </div>
+                                <h3 class="products__sub-title">Фотоаппарат canon 80d</h3>
+                                <a href="#" class="product-card__category">Камеры</a>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-normal">50 000 руб.</span>
+                                </div>
+                                <button class="button">Купить</button>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="slider-btns">
+                        <div class="swiper-button-prev" id="checked-prev"></div>
+                        <div class="swiper-button-next" id="checked-next"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="main-footer__logo">
+                <img src="assets/img/icons/logo.svg" alt="Video-studio.pro" class="main-footer__logo-img">
+                <small class="main-footer__copyrigh">© Video-studio.pro, 2020—2024</small>
+            </div>
+            <div class="projects marquee" id="marquee">
+                <div class="marquee__inner">
+                    <a href="#">
+                        <img src="assets/img/logo/Goodly-logo2.png" alt="goodly.pro" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/sitnov-logo2.png" alt="илья ситнов" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/cfv2.png" alt="cfv" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/x-plan-logo2.png" alt="x-plan.pro" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/coin-logo2.png" alt="coin" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/propiar_logo2.png" alt="propiar" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/smart-logo2.png" alt="умный доход" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/v-piare-logo2.png" alt="v-piare" class="projects__item">
+                    </a>
+                    <a href="#" >
+                        <img src="assets/img/logo/kakzarabotat-logo2.png" alt="как заработать" class="projects__item">
+                    </a>
+                </div>
+                <div class="marquee__inner marquee__inner--clone">
+                    <a href="#">
+                        <img src="assets/img/logo/Goodly-logo2.png" alt="goodly.pro" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/sitnov-logo2.png" alt="илья ситнов" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/cfv2.png" alt="cfv" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/x-plan-logo2.png" alt="x-plan.pro" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/coin-logo2.png" alt="coin" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/propiar_logo2.png" alt="propiar" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/smart-logo2.png" alt="умный доход" class="projects__item">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/logo/v-piare-logo2.png" alt="v-piare" class="projects__item">
+                    </a>
+                    <a href="#" >
+                        <img src="assets/img/logo/kakzarabotat-logo2.png" alt="как заработать" class="projects__item">
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <ul class="footer-nav__list container">
+                    <li class="footer-nav__item">
+                        <a target="_blank" href="#" class="footer-nav__link">PRO Видео</a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a target="_blank" href="#" class="footer-nav__link">Чек-лист</a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a target="_blank" href="#" class="footer-nav__link">Трансляция и Youtube</a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a target="_blank" href="#" class="footer-nav__link">Три шага к успеху</a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a target="_blank" href="#" class="footer-nav__link">Наши видео</a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a target="_blank" href="#" class="footer-nav__link">Отзывы</a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a target="_blank" href="#" class="footer-nav__link">Результаты вместе с нами</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-footer__bottom">
+                <div class="container">
+                    <div class="main-footer__support">
+                        <span class="main-footer__support-text">Тех. поддержка ответит на вопросы:</span>
+                        <a target="_blank" href="mailto:support@video-studio.pro" class="main-footer__support-mail"></a>
+                    </div>
+                    <div class="main-footer__docs">
+                        <a target="_blank" href="#" class="main-footer__docs-link">Политика конфиденциальности</a>
+                        <a target="_blank" href="#" class="main-footer__docs-link">Публичная оферта</a>
+                    </div>
+                    <div class="socials">
+                        <ul class="socials__list">
+                            <li class="socials__item">
+                                <a target="_blank" href="#" class="socials__link" title="facebook">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#fb"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a target="_blank" href="#" class="socials__link vk" title="vkontakte">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a target="_blank" href="#" class="socials__link youtube" title="youtube">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#youtube"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a target="_blank" href="#" class="socials__link inst" title="instagram">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#Instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a target="_blank" href="#" class="socials__link twitter" title="twitter">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#twitter"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- слайдер -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="js/products.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

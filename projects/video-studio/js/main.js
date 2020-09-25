@@ -14,7 +14,7 @@ function closeBanner() {
 
 function toggleMenu() {
     const menu = $('.main-nav');
-    const burgerBtn = $('.mobile-burger');
+    const burgerBtn = $('.main-header .mobile-burger');
     burgerBtn.on('click', () => {
         menu.toggleClass('open');
     })
@@ -52,7 +52,7 @@ function togglePopup() {
         $('.popup-wrapper').hide();
         $("#video").attr("src","");
     })
-    $('.close-btn').on('click', function(e) {
+    $('.popup-wrapper .close-btn').on('click', function(e) {
         $('.popup-wrapper').hide();
         $("#video").attr("src","");
     })
@@ -113,16 +113,6 @@ var teamSlider = new Swiper('.team__slider', {
         }
     }
 });
-
-// if ('objectFit' in document.documentElement.style === false) {
-// 	document.addEventListener('DOMContentLoaded', function () {
-// 		Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {
-// 			(image.runtimeStyle || image.style).background = 'url("' + image.src + '") no-repeat 50%/' + (image.currentStyle ? image.currentStyle['object-fit'] : image.getAttribute('data-object-fit'));
-
-// 			image.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'' + image.width + '\' height=\'' + image.height + '\'%3E%3C/svg%3E';
-// 		});
-// 	});
-// }
 
 
 // document.addEventListener("DOMContentLoaded", function() {

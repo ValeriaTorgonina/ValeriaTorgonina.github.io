@@ -9,17 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>video-studio</title>
     <base target="_blank">
 </head>
 <body>
     <div class="wrapper">
+
         <header class="main-header">
             <div class="container">
-                <a target="_blank" href="#" class="main-header__logo">
+                <a target="_blank" href="landing.html" class="main-header__logo">
                     <img src="./assets/img/icons/logo.svg" alt="лого" class="main-header__logo-img">
                 </a>
                 <nav class="main-nav">
@@ -34,11 +33,10 @@
                             <a target="_blank" href="#" class="main-nav__link">Видео</a>
                         </li>
                         <li class="dropdown main-nav__item">
-                            <a class="dropdown-toggle main-nav__link" href="#" role="button not-found" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle main-nav__link" href="#" role="button">
                                 Товары
                             </a>
-                            
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-menu">
                                 <a target="_blank" class="dropdown-item" href="#">Раздел 1</a>
                                 <a target="_blank" class="dropdown-item" href="#">Раздел 2</a>
                                 <a target="_blank" class="dropdown-item" href="#">Раздел 3</a>
@@ -51,7 +49,12 @@
                             <a target="_blank" href="#" class="main-nav__link">Инструменты</a>
                         </li>
                         <li class="main-nav__item">
-                            <button class="login-btn">Войти</button>
+                            <button class="login-btn">
+                                <svg class="login-btn__icon">
+                                    <use xlink:href="assets/img/sprite.svg#user"></use>
+                                </svg>
+                                Войти
+                            </button>
                         </li>
                     </ul>
                 </nav>
@@ -66,6 +69,7 @@
                 </button>
             </div>
         </header>
+
         <div class="banner">
             <div class="container">
                 <span class="banner__text">УСПЕЙ КУПИТЬ СО СКИДКОЙ! <i> →</i></span>
@@ -82,22 +86,22 @@
                         <div class="block__inner">
                             <div class="video">
                                 <img width="100%" height="auto" src="assets/img/video-bg.jpg" alt="">
-                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/-9xGURMOnlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/-9xGURMOnlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <button class="play-btn"></button>
                             </div>
                             <div class="block__content block__content--right">
                                 <ul class="list list--white">
                                     <li class="list__item">
-                                        <span class="text">Научим вас создавать видео</span> 
+                                        <span class="text">Изучите тонкости создания видео</span> 
                                     </li>
                                     <li class="list__item">
-                                        <span class="text">Проинструктируем по созданию домашней студии</span> 
+                                        <span class="text">Соберёте домашнюю видеостудию</span> 
                                     </li>
                                     <li class="list__item">
-                                        <span class="text">Научим вас создавать видео</span> 
+                                        <span class="text">Освоите навыки монетизации видео</span> 
                                     </li>
                                     <li class="list__item">
-                                        <span class="text">Поднимем настроение</span> 
+                                        <span class="text">Сделаете видео источником дохода</span> 
                                     </li>
                                 </ul>
                                 <small class="desc">
@@ -115,52 +119,52 @@
                     <h3 class="sub-title"><b>ЧЕМ БУДЕТ ПОЛЕЗЕН</b> ДЛЯ ВАС КУРС <b class="red">“PRO ВИДЕО”</b>?</h3>
                     <div class="video">
                         <img width="100%" height="auto" src="assets/img/video2.jpg" alt="">
-                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/-9xGURMOnlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/-9xGURMOnlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <button class="play-btn"></button>
                     </div>
                     <h2 class="title"><b>ЦИФРОВОЙ МИР</b> <b class="red">СТРЕМИТЕЛЬНО МЕНЯЕТСЯ</b></h2>
                     <h3 class="sub-title">ПОЛУЧИТЕ <b class="underline">ПРЕИМУЩЕСТВО</b></h3>
                     <p class="text">
-                        При создании генератора мы использовали небезизвестный универсальный 
-                        код речей. Текст генерируется абзацами случайным образом от двух до 
-                        десяти предложений в абзаце, что позволяет сделать текст более 
-                        привлекательным и живым для визуально-слухового восприятия.
+                        На сегодняшний день потребление видеоконтента стало основным способом получения информации.
+                        Люди покупают, обучаются и развлекаются с помощью видео. А тот, кто создает видео, получает
+                        от всего этого выгоду. Почему бы вам не откусить лакомый кусок пирога и не стать профессионалом
+                        в области создания видео? Освойте новый источник дохода, который будет кормить вас в ближайшие десятилетия!
                     </p>
                     <ul class="profit__card-list">
                         <li class="profit__card-item">
-                            <img src="assets/img/prof1.jpg" alt="обучение онлайн" class="profit__card-img">
+                            <img src="assets/img/prof1.jpg" alt="продающие видео" class="profit__card-img">
                             <div class="profit__card-decor">
-                                <span>ОБУЧЕНИЕ ОНЛАЙН</span>
+                                <span>продающие видео</span>
                             </div>
                         </li>
                         <li class="profit__card-item">
-                            <img src="assets/img/prof2.jpg" alt="ДАУНШИФТИНГ" class="profit__card-img">
+                            <img src="assets/img/prof2.jpg" alt="обучающие видео" class="profit__card-img">
                             <div class="profit__card-decor">
-                                <span>ДАУНШИФТИНГ</span>
+                                <span>обучающие видео</span>
                             </div>
                         </li>
                         <li class="profit__card-item">
-                            <img src="assets/img/prof3.jpg" alt="путешествия" class="profit__card-img">
+                            <img src="assets/img/prof3.jpg" alt="вирусные видео" class="profit__card-img">
                             <div class="profit__card-decor">
-                                <span>ПУТЕШЕСТВИЯ</span>
+                                <span>вирусные видео</span>
                             </div>
                         </li>
                         <li class="profit__card-item">
-                            <img src="assets/img/prof4.jpg" alt="стримы с котиками" class="profit__card-img">
+                            <img src="assets/img/prof4.jpg" alt="стриминг" class="profit__card-img">
                             <div class="profit__card-decor">
-                                <span>СТРИМЫ с котиками</span>
+                                <span>стриминг</span>
                             </div>
                         </li>
                         <li class="profit__card-item">
-                            <img src="assets/img/prof5.jpg" alt="ремесло" class="profit__card-img">
+                            <img src="assets/img/prof5.jpg" alt="видеомонтаж" class="profit__card-img">
                             <div class="profit__card-decor">
-                                <span>РЕМЕСЛО</span>
+                                <span>видеомонтаж</span>
                             </div>
                         </li>
                         <li class="profit__card-item">
-                            <img src="assets/img/prof6.jpg" alt="обзор электроники" class="profit__card-img">
+                            <img src="assets/img/prof6.jpg" alt="монетизация" class="profit__card-img">
                             <div class="profit__card-decor">
-                                <span>ОБЗОР ЭЛЕКТРОНИКИ</span>
+                                <span>монетизация</span>
                             </div>
                         </li>
                     </ul>
@@ -168,16 +172,19 @@
             </section>
             <div class="block block--gray">
                 <div class="container">
-                    <h3 class="sub-title">ДЛЯ ТЕХ<b> КТО ВЫБРАЛ</b> <b class="red">РАБОТУ ИЗ ДОМА</b> ( ИЛИ КОГО УВОЛИЛИ )</h3>
+                    <h3 class="sub-title">
+                        ДЛЯ ТЕХ<b> КТО ВЫБРАЛ</b> <b class="red">РАБОТУ ИЗ ДОМА</b> и хочет свободы
+                    </h3>
                     <div class="block__inner">
                         <img src="assets/img/cards/card1.jpg" alt="" class="block__img">
                         <div class="block__content block__content--right">
-                            <h4 class="block__sub-title"><b>ПОДЗАГОЛОВОК</b> БЛОКА</h4>
+                            <h4 class="block__sub-title"><b>создание видео</b> - тренд 21 века</h4>
                             <p class="text">
-                                При создании генератора мы использовали небезизвестный универсальный 
-                                код речей. Текст генерируется абзацами случайным образом от двух до 
-                                десяти предложений в абзаце, что позволяет сделать текст 
-                                более привлекательным и живым для визуально-слухового восприятия.
+                                Научившись профессионально создавать видео, вы сможете продавать
+                                свои товары, услуги, курсы, зарабатывать
+                                на просмотрах, сотрудничать с предпринимателями и блогерами, которые
+                                нуждаются в услугах видеопроизводства и монтажа. Такие услуги стоят
+                                дорого и пользуются хорошим спросом.
                             </p>
                         </div>
                     </div>
@@ -185,15 +192,17 @@
             </div>
             <div class="block">
                 <div class="container">
-                    <h3 class="sub-title">ДЛЯ ТЕХ<b> КТО</b> <b class="red">УЖЕ СНИМАЕТ ВИДЕО</b> на своей студии</h3>
+                    <h3 class="sub-title">
+                        ДЛЯ ТЕХ<b> КТО</b> <b class="red">УЖЕ СОЗДАЁТ ВИДЕО</b> на своей студии
+                    </h3>
                     <div class="block__inner">
                         <div class="block__content">
-                            <h4 class="block__sub-title"><b>ПОДЗАГОЛОВОК</b> БЛОКА</h4>
+                            <h4 class="block__sub-title"><b>ПРОКАЧАЙТЕ СВОИ</b> НАВЫКИ</h4>
                             <p class="text">
-                                При создании генератора мы использовали небезизвестный универсальный 
-                                код речей. Текст генерируется абзацами случайным образом от двух до 
-                                десяти предложений в абзаце, что позволяет сделать текст 
-                                более привлекательным и живым для визуально-слухового восприятия.
+                                Вы сможете улучшить свои навыки видеомонтажа и узнать секреты профессионалов,
+                                видео которых собирают миллионы просмотров. Также вы сможете узнать о дополнительных
+                                способах монетизации видео, о которых умалчивают ваши конкуренты. Информация, которую
+                                мы даём, поможет как новичкам, так и опытным создателям видеоконтента!
                             </p>
                         </div>
                         <img src="assets/img/cards/card2.jpg" alt="" class="block__img">
@@ -968,9 +977,9 @@
             </div>
             <div class="centered-block centered-block--gray">
                 <div class="container">
-                    <article class="product-card">
-                        <div class="product-card__content">
-                            <h2 class="product-card__title">
+                    <article class="card-banner">
+                        <div class="card-banner__content">
+                            <h2 class="card-banner__title">
                                 <span class="small">Научись создавать</span><br>
                                 <b class="red corners corners--light">ПОпулярные видео</b><br>
                                 Своими руками
@@ -986,13 +995,13 @@
                                     <span class="text">Модуль 3: <b>Выход онлайн</b> + чеклист</span>
                                 </li>
                             </ul>
-                            <div class="product-card__price">
+                            <div class="card-banner__price">
                                 <small class="red line-through">9500 РУБ</small>
                                 <span>6500 РУБ</span>
                             </div>
                         </div>
-                        <img src="assets/img/products/pro-video.png" alt="pro-video" class="product-card__img">
-                        <div class="product-card__footer">
+                        <img src="assets/img/products/pro-video.png" alt="pro-video" class="card-banner__img">
+                        <div class="card-banner__footer">
                             <a href="#" class="button not-found">КУПИТЬ КУРС СЕЙЧАС</a>
                             <div class="pseudo-btn">
                                 <span class="pseudo-btn__text-bold">Успейте стать участником!</span>
@@ -1035,7 +1044,7 @@
                     <a href="#">
                         <img src="assets/img/logo/v-piare-logo2.png" alt="v-piare" class="projects__item">
                     </a>
-                    <a href="#">
+                    <a href="#" >
                         <img src="assets/img/logo/kakzarabotat-logo2.png" alt="как заработать" class="projects__item">
                     </a>
                 </div>
@@ -1064,7 +1073,7 @@
                     <a href="#">
                         <img src="assets/img/logo/v-piare-logo2.png" alt="v-piare" class="projects__item">
                     </a>
-                    <a href="#">
+                    <a href="#" >
                         <img src="assets/img/logo/kakzarabotat-logo2.png" alt="как заработать" class="projects__item">
                     </a>
                 </div>
@@ -1164,10 +1173,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="js/main.js"></script>
 </body>

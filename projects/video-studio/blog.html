@@ -13,7 +13,6 @@
     <title>video-studio</title>
     <base target="_blank">
 </head>
-
 <body>
     <div class="wrapper">
 
@@ -71,15 +70,43 @@
             </div>
         </header>
 
-        <main class="main">
-            <section class="inaccessible">
-                <div class="container">
-                    <div class="inaccessible__decor"></div>
-                    <h1 class="main-title">страница <b class="red">НЕДОСТУПНА</b></h1>
-                    <span class="inaccessible__desc">проект находится в разработке</span>
-                    <a href="index.html" class="button">вернуться</a>
+        <main class="main blog">
+            <div class="container">
+                <header class="blog-header">
+                    <h2 class="sub-title">ЗАПИСИ БЛОГА</h2>
+                    <nav class="blog-nav">
+                        <button class="blog-nav__btn">ВСЕ записи</button>
+                        <button class="blog-nav__btn">ВИДЕО</button>
+                        <button class="blog-nav__btn">СТАТЬИ</button>
+                        <button class="blog-nav__btn">БЕСПлаТНОЕ</button>
+                    </nav>
+                    <div class="blog-filter">
+                        <span class="blog-filter__text">Первыми показывать:</span>
+                        <div class="select blog-filter__select">
+                            <div class="select__current" tabindex="1">
+                                <div class="select__value">
+                                    <input class="select__input" type="radio" id="0" value="new" name="blog" checked="checked">
+                                    <p class="select__input-text">Новые</p>
+                                </div>
+                                <div class="select__value">
+                                    <input class="select__input" type="radio" id="1" value="old" name="blog">
+                                    <p class="select__input-text">Старые</p>
+                                </div>
+                                <svg class="select__icon">
+                                    <use xlink:href="assets/img/sprite.svg#select-arrow"></use>
+                                </svg>
+                            </div>
+                            <ul class="select__list">
+                                <li><label class="select__option" for="0" aria-hidden="aria-hidden">Новые</label></li>
+                                <li><label class="select__option" for="1" aria-hidden="aria-hidden">Старые</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+                <div class="blog__content">
+                    
                 </div>
-            </section>
+            </div>
         </main>
 
         <footer class="main-footer">
@@ -224,7 +251,6 @@
                 </div>
             </div>
         </footer>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
