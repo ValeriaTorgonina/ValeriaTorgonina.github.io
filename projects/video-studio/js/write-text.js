@@ -16,7 +16,7 @@ function writeTextByJS(id, text, speed = 100){
 
 async function typingText() {
     const arrOfTitle = [
-        {id: 1, text: "научись создавать"}, 
+        {id: 1, text: "научитесь создавать"}, 
         {id: 2, text: "популярные"},
         {id: 3, text: "видео"},
         {id: 4, text: "Своими руками"}
