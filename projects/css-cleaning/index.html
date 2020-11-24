@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-language" content="ru">
+    <link rel="stylesheet" href="css/style.css">
+    <title>стс-уборка</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header" :class="menuState">
+            <div class="container">
+                <a href="#" class="main-header__logo-img">
+                    <svg class="main-header__logo-img">
+                        <use xlink:href="assets/img/sprite.svg#logo"></use>
+                    </svg>
+                </a>
+                <button class="main-header__mobil-btn" @click="toggleMenu">
+                </button>
+                <nav class="main-nav">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Услуги</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Компаниям</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Участие в тендерах</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Портфолио</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">О нас</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#" class="main-nav__link">Блог</a>
+                        </li>
+                    </ul>
+                    <div class="main-nav__info">
+                        <select class="main-nav__select" name="city">
+                            <option value="value1">Значение 1</option> 
+                            <option value="value2" selected="">Москва и область</option>
+                            <option value="value3">Значение 3</option>
+                        </select>
+                        <a href="tel:+74955632345" class="main-nav__phone">+7 495 563-23-45</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+            <section id="services" class="services">
+                <div class="container">
+                    <div class="services__left-col">
+                        <h2 class="title">Наши услуги</h2>
+                        <p class="text">
+                            Оптимизирует ваш рабочий процесс, автоматически объединяя HR, 
+                            льготы, заработную плату и планирование на одной платформе.
+                        </p>
+                        <button class="button">Заказать уборку</button>
+                    </div>
+                    <div class="services__right-col">
+                        <div class="services__filter" :class="forWhom">
+                            <button class="services__filter-btn" :class="{active: forWhom === FOR_WHOM_ENUM.company}" @click="showFor(FOR_WHOM_ENUM.company)">
+                                Компаниям
+                            </button>
+                            <button class="services__filter-btn" :class="{active: forWhom === FOR_WHOM_ENUM.privateClients}" @click="showFor(FOR_WHOM_ENUM.privateClients)">
+                                Частным клиентам
+                            </button>
+                            <button class="services__filter-btn new" :class="{active: forWhom === FOR_WHOM_ENUM.specialOffer}" @click="showFor(FOR_WHOM_ENUM.specialOffer)">
+                                Спец. предложения
+                            </button>
+                        </div>
+                        <ul class="services__list">
+                            <li class="services__item" v-for="offer in offers[forWhom]">
+                                <svg class="services__item-decor">
+                                    <use :xlink:href="'assets/img/sprite.svg#' + offer.icon"></use>
+                                </svg>
+                                <h4 class="services__item-name">{{ offer.name }}</h4>
+                                <span class="services__item-text">{{ offer.text }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="stages" class="stages">
+                <svg class="stages__decor" viewBox="0 0 1440 338" fill="none" xmlns="http://www.w3.org/2000/svg" v-scroll="getPosition">
+                    <linearGradient id="linear-gradient">
+                        <stop :offset="elPosition" stop-color="#F25929"></stop>
+                        <stop :offset="elPosition" stop-color="#293255"></stop>
+                    </linearGradient>
+                    <path d="M-11 336C-11 336 113 120 349 120C585 120 560 180 719 169C878 158 941 -1.00001 1121 2.99999C1191.18 4.55958 1250 37.1741 1304 59.0816C1395 96 1618 81 1618 81" stroke="url(#linear-gradient)" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 12"></path>
+                </svg>                    
+                <div class="container">
+                    <span class="title title--light">
+                        Мы ценим ваше время<br> 
+                        и гарантируем высокое качество<br>
+                        на каждом этапе работ
+                    </span>
+                    <div class="stages__card-inner">
+                        <div class="stages__card" data-aos="fade-up" data-aos-duration="1300" data-aos-offset="150">
+                            <svg class="stages__card-decor">
+                                <use xlink:href="assets/img/sprite.svg#phone"></use>
+                            </svg>
+                            <span class="stages__card-title">Оставляете заявку</span>
+                            <p class="text text--light">
+                                Мы перезваниваем вам в течении 10 минут, детально 
+                                узнаем о объеме работ и удобном для вас времени
+                            </p>
+                        </div>
+                        <div class="stages__card" data-aos="fade-up" data-aos-duration="1750" data-aos-offset="250">
+                            <svg class="stages__card-decor">
+                                <use xlink:href="assets/img/sprite.svg#cleaning"></use>
+                            </svg>
+                            <span class="stages__card-title">Мы убираем</span>
+                            <p class="text text--light">
+                                Мы перезваниваем вам в течении 10 минут, детально 
+                                узнаем о объеме работ и удобном для вас времени
+                            </p>
+                        </div>
+                        <div class="stages__card" data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300">
+                            <svg class="stages__card-decor">
+                                <use xlink:href="assets/img/sprite.svg#reward"></use>
+                            </svg>
+                            <span class="stages__card-title">Вы наслаждаетесь результатом</span>
+                            <p class="text text--light">
+                                Мы перезваниваем вам в течении 10 минут, детально 
+                                узнаем о объеме работ и удобном для вас времени
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="results">
+                <h2 class="title">Результат нашей работы</h2>
+                <div class="results__inner">
+                    <div class="results__images">
+                        <img class="results__img" src="./assets/img/before.jpg" alt="до">
+                        <img class="results__img" src="./assets/img/after.jpg" alt="после">
+                    </div>
+                    <div class="results__slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="results__slide swiper-slide">
+                                <h4 class="results__slide-title">Уборка помещения после ремонта</h4>
+                                <span class="results__slide-sub-title">Процесс</span>
+                                <p class="text">
+                                    Влажная очистка поверхностей, с использованием хим. 
+                                    моющих средств, от следов краски, цемента, затирок, клея, извёстки
+                                </p>
+                                <span class="results__slide-sub-title">Результат работы</span>
+                                <p class="text">
+                                    Специалисты выполнили гениральную уборку 
+                                    помещения качественно и в короткие сроки
+                                </p>
+                            </div>
+                            <div class="results__slide swiper-slide">
+                                <h4 class="results__slide-title">Мойка окон в БЦ название</h4>
+                                <span class="results__slide-sub-title">Процесс</span>
+                                <p class="text">
+                                    Влажная очистка поверхностей, с использованием хим. 
+                                    моющих средств, от следов краски, цемента, затирок, клея, извёстки
+                                </p>
+                                <span class="results__slide-sub-title">Результат работы</span>
+                                <p class="text">
+                                    Специалисты выполнили гениральную уборку 
+                                    помещения качественно и в короткие сроки
+                                </p>
+                            </div>
+                            <div class="results__slide swiper-slide">
+                                <h4 class="results__slide-title">Уборка помещения после ремонта</h4>
+                                <span class="results__slide-sub-title">Процесс</span>
+                                <p class="text">
+                                    Влажная очистка поверхностей, с использованием хим. 
+                                    моющих средств, от следов краски, цемента, затирок, клея, извёстки
+                                </p>
+                                <span class="results__slide-sub-title">Результат работы</span>
+                                <p class="text">
+                                    Специалисты выполнили гениральную уборку 
+                                    помещения качественно и в короткие сроки
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="partners">
+                <h2 class="title">Нам доверяют</h2>
+                <ul class="partners__list" data-1000-end="transform: translate(120px, 0);" data-0-end="transform: translate(-120px, 0);">
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo6.png" alt="А5 аптека" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo5.png" alt="park inn" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo1.png" alt="техносила" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo2.png" alt="гаспром" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo3.png" alt="аиртек" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo4.png" alt="NCR" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo5.png" alt="park inn" class="partners__item-img">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="partners__list" data-1000-end="transform: translate(80px, 0);" data-0-end="transform: translate(-80px, 0);">
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo1.png" alt="техносила" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo2.png" alt="гаспром" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo3.png" alt="аиртек" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo4.png" alt="NCR" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo5.png" alt="park inn" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo1.png" alt="техносила" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo6.png" alt="А5 аптека" class="partners__item-img">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="partners__list" data-1000-end="transform: translate(100px, 0);" data-0-end="transform: translate(-100px, 0);">
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo3.png" alt="аиртек" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo4.png" alt="NCR" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo2.png" alt="гаспром" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo5.png" alt="park inn" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo6.png" alt="А5 аптека" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo1.png" alt="техносила" class="partners__item-img">
+                        </a>
+                    </li>
+                    <li class="partners__item">
+                        <a href="#" class="partners__item-link">
+                            <img src="assets/img/partners-logo2.png" alt="гаспром" class="partners__item-img">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <div class="container">
+                <a href="#" class="main-footer__logo">
+                    <svg class="main-footer__logo-img">
+                        <use xlink:href="assets/img/sprite.svg#logo"></use>
+                    </svg>
+                </a>
+                <ul class="main-footer__nav-list">
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">Главная</a>
+                    </li>
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">Блог</a>
+                    </li>
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">Услуги</a>
+                    </li>
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">Компаниям</a>
+                    </li>
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">Участие в тендерах</a>
+                    </li>
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">Портфолио</a>
+                    </li>
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">О нас</a>
+                    </li>
+                    <li class="main-footer__nav-item">
+                        <a href="#" class="main-footer__nav-link">Контакты</a>
+                    </li>
+                </ul>
+                    <div class="main-footer__contacts">
+                        <a href="tel:+74955632345" class="main-footer__phone">+7 495 563-23-45</a>
+                        <ul class="socials">
+                            <li class="socials__item">
+                                <a href="#" class="socials__link">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a href="#" class="socials__link">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#fb"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a href="#" class="socials__link">
+                                    <svg class="socials__icon">
+                                        <use xlink:href="assets/img/sprite.svg#inst"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="main-footer__copyright">
+                <div class="container">
+                    <small class="main-footer__copyright-text">
+                        © СТС-Сервис. 2020. Все права защищены.
+                    </small>
+                    <small class="main-footer__copyright-text">
+                        Сделано в студии Грохотова.
+                    </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
