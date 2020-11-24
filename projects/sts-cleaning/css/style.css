@@ -2087,8 +2087,14 @@ video:focus {
       width: 100%;
       text-align: center; } }
   @media (max-width: 560px) {
+    .services__item {
+      max-width: 320px;
+      margin: 0 auto; }
     .services__item-name {
-      font-size: 18px; } }
+      font-size: 18px; }
+    .services .text {
+      margin: 0 auto;
+      margin-bottom: 40px; } }
 
 .stages {
   position: relative;
@@ -2145,16 +2151,18 @@ video:focus {
         flex-wrap: wrap; }
       .stages__card {
         width: 49%;
-        margin-bottom: 20px; }
+        margin-bottom: 10px;
+        text-align: center; }
         .stages__card:last-of-type {
-          margin: 0 auto; } }
+          width: 100%;
+          margin: 0 auto; }
+      .stages__decor {
+        display: none; } }
   @media (max-width: 560px) {
     .stages {
       padding: 40px 0; }
       .stages .title {
         margin-bottom: 30px; }
-      .stages__decor {
-        display: none; }
       .stages__card {
         width: 100%; } }
 
@@ -2221,11 +2229,12 @@ video:focus {
     display: flex; }
   .results__img {
     width: 50%; }
-  .results__slider {
+  .results__slider-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+  .results__slider {
     width: 1095px;
     padding: 85px 0;
     overflow: hidden; }
@@ -2315,16 +2324,22 @@ video:focus {
   @media (max-width: 768px) {
     .results {
       padding: 50px 0; }
-      .results__inner {
-        padding-bottom: 310px; }
       .results__images {
         width: 100%; }
+      .results__swiper-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px; }
+      .results__swiper-btn {
+        position: static;
+        margin: 5px; }
+      .results__slider-wrapper {
+        position: static;
+        transform: translate(0, 0);
+        padding-top: 10px; }
       .results__slider {
-        right: auto;
-        left: 20px;
-        top: auto;
-        bottom: 0px;
-        transform: translate(0, 0); } }
+        padding-top: 10px; } }
   @media (max-width: 560px) {
     .results .title {
       margin-bottom: 20px;
@@ -2333,6 +2348,10 @@ video:focus {
       left: 0;
       bottom: -15px;
       width: 640px; } }
+  @media (max-width: 400px) {
+    .results__slider {
+      width: 100%;
+      padding: 20px; } }
 
 .main-footer {
   background: #2B2F3E;

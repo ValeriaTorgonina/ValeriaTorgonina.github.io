@@ -12,6 +12,7 @@
 
 <body>
     <div class="wrapper">
+        <div id="skrollr-body"></div>
         <header class="main-header" :class="menuState">
             <div class="container">
                 <a href="#" class="main-header__logo-img">
@@ -44,7 +45,7 @@
                     </ul>
                     <div class="main-nav__info">
                         <select class="main-nav__select" name="city">
-                            <option value="value1">Значение 1</option> 
+                            <option value="value1">Значение 1</option>
                             <option value="value2" selected="">Москва и область</option>
                             <option value="value3">Значение 3</option>
                         </select>
@@ -59,7 +60,7 @@
                     <div class="services__left-col">
                         <h2 class="title">Наши услуги</h2>
                         <p class="text">
-                            Оптимизирует ваш рабочий процесс, автоматически объединяя HR, 
+                            Оптимизирует ваш рабочий процесс, автоматически объединяя HR,
                             льготы, заработную плату и планирование на одной платформе.
                         </p>
                         <button class="button">Заказать уборку</button>
@@ -95,10 +96,10 @@
                         <stop :offset="elPosition" stop-color="#293255"></stop>
                     </linearGradient>
                     <path d="M-11 336C-11 336 113 120 349 120C585 120 560 180 719 169C878 158 941 -1.00001 1121 2.99999C1191.18 4.55958 1250 37.1741 1304 59.0816C1395 96 1618 81 1618 81" stroke="url(#linear-gradient)" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 12"></path>
-                </svg>                    
+                </svg>
                 <div class="container">
                     <span class="title title--light">
-                        Мы ценим ваше время<br> 
+                        Мы ценим ваше время<br>
                         и гарантируем высокое качество<br>
                         на каждом этапе работ
                     </span>
@@ -109,7 +110,7 @@
                             </svg>
                             <span class="stages__card-title">Оставляете заявку</span>
                             <p class="text text--light">
-                                Мы перезваниваем вам в течении 10 минут, детально 
+                                Мы перезваниваем вам в течении 10 минут, детально
                                 узнаем о объеме работ и удобном для вас времени
                             </p>
                         </div>
@@ -119,7 +120,7 @@
                             </svg>
                             <span class="stages__card-title">Мы убираем</span>
                             <p class="text text--light">
-                                Мы перезваниваем вам в течении 10 минут, детально 
+                                Мы перезваниваем вам в течении 10 минут, детально
                                 узнаем о объеме работ и удобном для вас времени
                             </p>
                         </div>
@@ -129,7 +130,7 @@
                             </svg>
                             <span class="stages__card-title">Вы наслаждаетесь результатом</span>
                             <p class="text text--light">
-                                Мы перезваниваем вам в течении 10 минут, детально 
+                                Мы перезваниваем вам в течении 10 минут, детально
                                 узнаем о объеме работ и удобном для вас времени
                             </p>
                         </div>
@@ -143,51 +144,55 @@
                         <img class="results__img" src="./assets/img/before.jpg" alt="до">
                         <img class="results__img" src="./assets/img/after.jpg" alt="после">
                     </div>
-                    <div class="results__slider swiper">
-                        <div class="swiper-wrapper">
-                            <div class="results__slide swiper-slide">
-                                <h4 class="results__slide-title">Уборка помещения после ремонта</h4>
-                                <span class="results__slide-sub-title">Процесс</span>
-                                <p class="text">
-                                    Влажная очистка поверхностей, с использованием хим. 
-                                    моющих средств, от следов краски, цемента, затирок, клея, извёстки
-                                </p>
-                                <span class="results__slide-sub-title">Результат работы</span>
-                                <p class="text">
-                                    Специалисты выполнили гениральную уборку 
-                                    помещения качественно и в короткие сроки
-                                </p>
-                            </div>
-                            <div class="results__slide swiper-slide">
-                                <h4 class="results__slide-title">Мойка окон в БЦ название</h4>
-                                <span class="results__slide-sub-title">Процесс</span>
-                                <p class="text">
-                                    Влажная очистка поверхностей, с использованием хим. 
-                                    моющих средств, от следов краски, цемента, затирок, клея, извёстки
-                                </p>
-                                <span class="results__slide-sub-title">Результат работы</span>
-                                <p class="text">
-                                    Специалисты выполнили гениральную уборку 
-                                    помещения качественно и в короткие сроки
-                                </p>
-                            </div>
-                            <div class="results__slide swiper-slide">
-                                <h4 class="results__slide-title">Уборка помещения после ремонта</h4>
-                                <span class="results__slide-sub-title">Процесс</span>
-                                <p class="text">
-                                    Влажная очистка поверхностей, с использованием хим. 
-                                    моющих средств, от следов краски, цемента, затирок, клея, извёстки
-                                </p>
-                                <span class="results__slide-sub-title">Результат работы</span>
-                                <p class="text">
-                                    Специалисты выполнили гениральную уборку 
-                                    помещения качественно и в короткие сроки
-                                </p>
+                    <div class="results__slider-wrapper">
+                        <div class="results__swiper-nav">
+                            <button class="results__swiper-btn swiper-button-prev"></button>
+                            <button class="results__swiper-btn swiper-button-next"></button>
+                        </div>
+                        <div class="results__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="results__slide swiper-slide">
+                                    <h4 class="results__slide-title">Уборка помещения после ремонта</h4>
+                                    <span class="results__slide-sub-title">Процесс</span>
+                                    <p class="text">
+                                        Влажная очистка поверхностей, с использованием хим.
+                                        моющих средств, от следов краски, цемента, затирок, клея, извёстки
+                                    </p>
+                                    <span class="results__slide-sub-title">Результат работы</span>
+                                    <p class="text">
+                                        Специалисты выполнили гениральную уборку
+                                        помещения качественно и в короткие сроки
+                                    </p>
+                                </div>
+                                <div class="results__slide swiper-slide">
+                                    <h4 class="results__slide-title">Мойка окон в БЦ название</h4>
+                                    <span class="results__slide-sub-title">Процесс</span>
+                                    <p class="text">
+                                        Влажная очистка поверхностей, с использованием хим.
+                                        моющих средств, от следов краски, цемента, затирок, клея, извёстки
+                                    </p>
+                                    <span class="results__slide-sub-title">Результат работы</span>
+                                    <p class="text">
+                                        Специалисты выполнили гениральную уборку
+                                        помещения качественно и в короткие сроки
+                                    </p>
+                                </div>
+                                <div class="results__slide swiper-slide">
+                                    <h4 class="results__slide-title">Уборка помещения после ремонта</h4>
+                                    <span class="results__slide-sub-title">Процесс</span>
+                                    <p class="text">
+                                        Влажная очистка поверхностей, с использованием хим.
+                                        моющих средств, от следов краски, цемента, затирок, клея, извёстки
+                                    </p>
+                                    <span class="results__slide-sub-title">Результат работы</span>
+                                    <p class="text">
+                                        Специалисты выполнили гениральную уборку
+                                        помещения качественно и в короткие сроки
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
+                    </div>                    
                 </div>
             </section>
             <section class="partners">
@@ -338,32 +343,32 @@
                         <a href="#" class="main-footer__nav-link">Контакты</a>
                     </li>
                 </ul>
-                    <div class="main-footer__contacts">
-                        <a href="tel:+74955632345" class="main-footer__phone">+7 495 563-23-45</a>
-                        <ul class="socials">
-                            <li class="socials__item">
-                                <a href="#" class="socials__link">
-                                    <svg class="socials__icon">
-                                        <use xlink:href="assets/img/sprite.svg#vk"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="socials__item">
-                                <a href="#" class="socials__link">
-                                    <svg class="socials__icon">
-                                        <use xlink:href="assets/img/sprite.svg#fb"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="socials__item">
-                                <a href="#" class="socials__link">
-                                    <svg class="socials__icon">
-                                        <use xlink:href="assets/img/sprite.svg#inst"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="main-footer__contacts">
+                    <a href="tel:+74955632345" class="main-footer__phone">+7 495 563-23-45</a>
+                    <ul class="socials">
+                        <li class="socials__item">
+                            <a href="#" class="socials__link">
+                                <svg class="socials__icon">
+                                    <use xlink:href="assets/img/sprite.svg#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a href="#" class="socials__link">
+                                <svg class="socials__icon">
+                                    <use xlink:href="assets/img/sprite.svg#fb"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a href="#" class="socials__link">
+                                <svg class="socials__icon">
+                                    <use xlink:href="assets/img/sprite.svg#inst"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="main-footer__copyright">
                 <div class="container">
